@@ -2,10 +2,6 @@ import Image from "next/image";
 import { baskerville } from "./fonts";
 
 export default function Home() {
-
-
-
-
   return (
     <div>
       <h1 className={baskerville.className}>Welcome to our Accessibility Report Tool</h1>

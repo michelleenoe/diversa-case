@@ -2,20 +2,29 @@ import Image from "next/image";
 import TabView from "@/components/TabView";
 export const revalidate = 1800;
 
-export default async function Page({ searchParams }) {
+const beregnScore = (data) => {
+  const antalProblemer = data.violations.length + data.inapplicable.length + data.incomplete.length;
+  return Math.round(100 - (antalProblemer / 53) * 100);
+};
+
+const SamletScoreBogstav = (score) => (score <= 33 ? "C" : score <= 66 ? "B" : "A");
+
+export default async function Side({ searchParams }) {
   const params = new URLSearchParams(searchParams);
-  const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
-  const data = await response.json();
+  const respons = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
+  const data = await respons.json();
+
+  const score = beregnScore(data);
 
   return (
     <main>
       <section className="grid grid-cols-2">
         <article className="grid  justify-center  p-8 ">
-          <h1 className="text-xl">Report for {data.url}</h1>
+          <h1 className="text-xl">Rapport for {data.url}</h1>
           <div className="grid justify-items-center">
-            <h2 className="text-2xl">Din score er</h2>
-            <div className="p-8 w-fit h-fit rounded-full bg-secondarycolor">
-              <p className="text-xl font-bold">{100 - data.violations.length - data.inapplicable.length - (data.incomplete.length / 53) * 100}%</p>
+            <h2 className="text-2xl">Din score er {score}%</h2>
+            <div className=" grid justify-center p-8 w-2 h-2 rounded-full bg-secondarycolor ">
+              <p className="text-xl font-bold">{SamletScoreBogstav(score)}</p>
             </div>
           </div>
           <p className=" text-center ">Antal problemer fundet: {data.violations.length + data.inapplicable.length + data.incomplete.length}</p>

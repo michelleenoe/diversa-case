@@ -5,9 +5,10 @@ export default function TabView({ data }) {
   return (
     <div>
       <Tab.Group>
-        <Tab.List>
+        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
           <Tab>
-            <p>Found {data.violations.length} issues</p>
+            <h2>Inapplicable</h2>
+            <p>{data.violations.length}</p>
           </Tab>
           <Tab>Tab 2</Tab>
           <Tab>Tab 3</Tab>

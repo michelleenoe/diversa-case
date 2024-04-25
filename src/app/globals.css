@@ -54,6 +54,7 @@
 
 body {
   background: var(--background-color);
+  width: var(--feature);
 }
 
 .large-size {

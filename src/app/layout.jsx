@@ -1,6 +1,5 @@
 import "./globals.css";
 import "./reset.css";
-import Header from "@/components/Header";
 import { poppins } from "./fonts";
 
 export const metadata = {
@@ -12,7 +11,6 @@ export default function Layout({ children }) {
   return (
     <html lang="en" className={poppins.className}>
       <body>
-        <Header />
         <div>{children}</div>
       </body>
     </html>

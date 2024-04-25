@@ -61,8 +61,6 @@ body {
   font-weight: var(--thick);
   line-height: var(--heading-large-line-height);
   color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
 }
 
 .medium-size {
@@ -70,8 +68,6 @@ body {
   font-weight: var(--thick);
   line-height: var(--default-line-height);
   color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
@@ -81,8 +77,6 @@ body {
   font-weight: var(--medium);
   line-height: var(--heading-small-line-height);
   color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
   margin-bottom: 1rem;
 }
 
@@ -91,8 +85,6 @@ body {
   font-weight: var(--normal);
   line-height: var(--default-line-height);
   color: var(--paragraph-color);
-  font-family: "lato", sans-serif;
-  font-style: normal;
 }
 
 p,

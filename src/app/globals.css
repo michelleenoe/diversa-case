@@ -60,8 +60,7 @@ body {
   font-size: var(--heading01);
   font-weight: var(--thick);
   line-height: var(--heading-large-line-height);
-  color: var(--primary03);
-  font-family: cabin;
+  color: var(--primary-text-color);
   font-style: normal;
 }
 
@@ -69,9 +68,7 @@ body {
   font-size: var(--heading02);
   font-weight: var(--thick);
   line-height: var(--default-line-height);
-  color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
+  color: var(--primary-text-color);
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
@@ -80,9 +77,7 @@ body {
   font-size: var(--heading06);
   font-weight: var(--medium);
   line-height: var(--heading-small-line-height);
-  color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
+  color: var(--primary-text-color);
   margin-bottom: 1rem;
 }
 
@@ -90,12 +85,18 @@ body {
   font-size: var(--paragraph-text);
   font-weight: var(--normal);
   line-height: var(--default-line-height);
-  color: var(--paragraph-color);
-  font-family: "lato", sans-serif;
-  font-style: normal;
+  color: var(--primary-text-color);
 }
 
 p,
 li {
   max-inline-size: 67ch;
+}
+
+h1 {
+  font-size: var(--heading01);
+  font-weight: var(--thick);
+  line-height: var(--heading-large-line-height);
+  color: var(--primary-text-color);
+  font-style: normal;
 }

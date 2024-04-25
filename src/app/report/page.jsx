@@ -23,7 +23,7 @@ export default async function Side({ searchParams }) {
           <h1 className="text-xl">Rapport for {data.url}</h1>
           <div className="grid justify-items-center">
             <h2 className="text-2xl">Din score er {score}%</h2>
-            <div className=" grid justify-center p-8 w-2 h-2 rounded-full bg-secondarycolor ">
+            <div className=" flex items-center p-10 w-2 h-2 aspect-square rounded-full bg-secondarycolor ">
               <p className="text-xl font-bold">{SamletScoreBogstav(score)}</p>
             </div>
           </div>
@@ -36,8 +36,9 @@ export default async function Side({ searchParams }) {
           <Image className="w-3/4" alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
         </figure>
       </section>
-
-      <TabView data={data} />
+      <section className="gir">
+        <TabView data={data} />
+      </section>
     </main>
   );
 }

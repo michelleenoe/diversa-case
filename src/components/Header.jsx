@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <>
       <nav>
-        <ul className="flex gap-2 ">
+        <ul className="flex pl-6 gap-6 medium-size">
           <li>
             <Link href={"/"} prefetch={false}>
               Hjem

@@ -9,7 +9,6 @@
   --full: minmax(var(--gap), 1fr);
   --content: min(45rem, 100% - var(--gap) * 2);
   --feature: minmax(0, 5rem);
-
   /* color */
   --primary-color-01: #69e3fc;
   --primary-color-02: #ffea80;
@@ -56,10 +55,6 @@ body {
   background: var(--background-color);
 }
 
-/* main {
-  width: var(--content);
-} */
-
 .large-size {
   font-size: var(--heading01);
   font-weight: var(--thick);
@@ -97,4 +92,25 @@ input:focus-visible {
 }
 button:focus-visible {
   outline: 2px solid var(--secondary-color);
+}
+
+.custom-grid {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-grid {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }

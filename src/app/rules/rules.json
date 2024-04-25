@@ -1,0 +1,53 @@
+[
+  {
+    "url": "https://dequeuniversity.com/rules/axe/4.9/tabindex",
+    "id": "tabindex",
+    "ruleset": "axe-core 4.9",
+    "header": "Elements should not have tabindex greater than zero",
+    "description": "Ensures tabindex attribute values are not greater than 0",
+    "descriptionlong": "A tabindex attribute must never have a value greater than 0 to prevent an unexpected tab order that can give the appearance of skipping some elements entirely.",
+    "impact": "Serious",
+    "tags": ["cat.keyboard", "best-practice"],
+    "issuetype": "failure",
+    "howtofix": "Hvordan skal vi fikse problemet?",
+    "whyitmatters": "Hvorfor er det vigtigt?"
+  },
+  {
+    "url": "https://dequeuniversity.com/rules/axe/4.9/aria-allowed-role",
+    "id": "aria-allowed-role",
+    "ruleset": "axe-core 4.9",
+    "header": "ARIA role should be appropriate for the element",
+    "description": "Ensures role attribute has an appropriate value for the element",
+    "descriptionlong": "Values assigned to WAI-ARIA role attributes must be valid. This means values must be spelled correctly, correspond to existing ARIA role values, and must not be abstract roles in order to correctly expose the purpose of the element.",
+    "impact": "Minor",
+    "tags": ["cat.aria", "best-practice"],
+    "issuetype": ["failure", "needs review"],
+    "howtofix": "Hvordan skal vi fikse problemet?",
+    "whyitmatters": "Hvorfor er det vigtigt?"
+  },
+  {
+    "url": "https://dequeuniversity.com/rules/axe/4.9/empty-heading",
+    "id": "empty-heading",
+    "ruleset": "axe-core 4.9",
+    "header": "Headings should not be empty",
+    "description": "Ensures tabindex attribute values are not greater than 0",
+    "descriptionlong": "A tabindex attribute must never have a value greater than 0 to prevent an unexpected tab order that can give the appearance of skipping some elements entirely.",
+    "impact": "Serious",
+    "tags": ["cat.keyboard", "best-practice"],
+    "issuetype": "failure",
+    "howtofix": "Hvordan skal vi fikse problemet?",
+    "whyitmatters": "Hvorfor er det vigtigt?"
+  },
+  {
+    "id": "Lorem ipsum",
+    "ruleset": "axe-core 4.9",
+    "header": "Lorem ipsum dolor",
+    "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    "descriptionlong": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde voluptate quidem facere commodi dolores, nostrum repellendus sunt nulla eveniet qui, perspiciatis sed expedita animi explicabo eligendi inventore consequuntur laborum autem!",
+    "impact": "Moderate",
+    "tags": ["cat.keyboard", "best-practice"],
+    "issuetype": "Lorem ipsum dolor",
+    "howtofix": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde voluptate quidem facere commodi dolores, nostrum repellendus sunt nulla eveniet qui, perspiciatis sed expedita animi explicabo eligendi inventore consequuntur laborum autem!",
+    "whyitmatters": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde voluptate quidem facere commodi dolores, nostrum repellendus sunt nulla eveniet qui."
+  }
+]

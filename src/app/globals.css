@@ -99,3 +99,10 @@ p,
 li {
   max-inline-size: 67ch;
 }
+
+input:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}
+button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}

@@ -32,8 +32,8 @@
   --paragraph-text: clamp(0.9rem, 1.2vw, 0.9rem);
 
   /* line-height */
-  --default-line-height: 1.475;
-  --heading-large-line-height: 3.62;
+  --default-line-height: 1.6;
+  --heading-large-line-height: 1.5;
   --heading-medium-line-height: 3.26;
   --heading-small-line-height: 1.9;
   --list-line-height: 2.4;
@@ -54,8 +54,11 @@
 
 body {
   background: var(--background-color);
-  width: var(--feature);
 }
+
+/* main {
+  width: var(--content);
+} */
 
 .large-size {
   font-size: var(--heading01);
@@ -87,11 +90,6 @@ body {
   font-weight: var(--normal);
   line-height: var(--default-line-height);
   color: var(--primary-text-color);
-}
-
-p,
-li {
-  max-inline-size: 67ch;
 }
 
 input:focus-visible {

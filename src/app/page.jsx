@@ -2,19 +2,19 @@ import { baskerville } from "./fonts";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center leading-5 pt-10">
-      <div className="large-size pb-5">
+    <div className="flex flex-col pt-10 items-center">
+      <div className="large-size pb-5 max-w-2xl ">
         <h1 className={baskerville.className}>
-          Welcome to our Accessibility Report Tool
+          Velkommen til vores Værktøj til Tilgængelighedsrapportering
         </h1>
       </div>
-      <p className="leading-6 pb-10 small-size">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-        voluptatum facere eaque voluptates aliquid amet ex architecto! Aperiam
-        quas, assumenda dolorem quibusdam, quisquam ducimus quia, culpa non
-        dolor eos exercitationem!
+      <p className="pb-10 small-size max-w-2xl">
+        Vores Tilgængelighedsrapportværktøj viser forbedringsområder og
+        overholdelse af standarder for dit webindhold. Sikre tilgængelighed for
+        et bredt publikum og en inkluderende onlineoplevelse. Start forbedringen
+        i dag!
       </p>
-      <form className="flex flex-col items-center gap-6" action="/report">
+      <form className="flex flex-col items-end gap-6" action="/report">
         <div className="flex flex-col">
           <label htmlFor="url" className="small-size pb-2 pl-1">
             Indtast venligst URL

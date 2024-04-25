@@ -13,7 +13,9 @@ export default function Layout({ children }) {
     <html lang="en" className={poppins.className}>
       <body>
         <Header />
-        <div>{children}</div>
+        <main>
+          <div>{children}</div>
+        </main>
       </body>
     </html>
   );

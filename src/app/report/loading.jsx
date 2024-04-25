@@ -14,7 +14,7 @@ function App() {
                 </div>
 
                 <div className="flex items-center justify-center w-full md:w-72 h-72 bg-gray-200 rounded">
-                    <svg className="w-18 h-18 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <svg className="w-10 h-20 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
                     </svg>
                 </div>

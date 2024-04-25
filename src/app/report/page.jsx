@@ -2,25 +2,60 @@ import Image from "next/image";
 
 export const revalidate = 1800;
 
-export default async function Page({ searchParams }) {
+const beregnScore = (data) => {
+    const antalProblemer = data.violations.length + data.inapplicable.length + data.incomplete.length;
+    return Math.round(100 - antalProblemer / 53 * 100);
+};
+
+
+const SamletScoreBogstav = (score) => (
+    score <= 33 ? 'C' :
+        score <= 66 ? 'B' :
+            'A'
+);
+
+export default async function Side({ searchParams }) {
     const params = new URLSearchParams(searchParams);
-    const response = await fetch(
+    const respons = await fetch(
         `https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`,
     );
-    const data = await response.json();
+    const data = await respons.json();
+
+
+    const score = beregnScore(data);
 
     return (
         <main>
-            <h1>Report for {data.url}</h1>
-            <p>Found {data.violations.length} issues</p>
+            <h1>Rapport for {data.url}</h1>
 
             <div>
-                <p>Number of issues found: {data.violations.length} + {data.inapplicable.length} + {data.incomplete.length}</p>
-                <p>Din score er {100 - data.violations.length - data.inapplicable.length - data.incomplete.length / 53 * 100}%</p>
+                <p>Antal problemer fundet: {data.violations.length + data.inapplicable.length + data.incomplete.length}</p>
+                <p>Din score er {score}%</p>
+                <p>Karakter: {SamletScoreBogstav(score)}</p>
+
+                <h2>Violations:</h2>
                 {data.violations.map((violation, index) => (
                     <div key={index}>
-                        <h2>{violation.description}</h2>
-                        <p>Impact: {violation.impact}</p>
+                        <p>{violation.description}</p>
+                        <p>{violation.impact}</p>
+                        {/* {violation.nodes.map(node => <p>{node.message}</p>)} */}
+                    </div>
+                ))}
+
+
+                <h2>Inapplicable:</h2>
+                {data.inapplicable.map((inapplicable, index) => (
+                    <div key={index}>
+                        <p>{inapplicable.description}</p>
+
+                    </div>
+                ))}
+
+                <h2>Incomplete:</h2>
+                {data.incomplete.map((incomplete, index) => (
+                    <div key={index}>
+                        <p>{incomplete.description}</p>
+
                     </div>
                 ))}
             </div>

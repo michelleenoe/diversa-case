@@ -70,8 +70,6 @@ export default function TabView({ data }) {
               </article>
             </section>
           </Tab.Panel>
-          <Tab.Panel>Content 2</Tab.Panel>
-          <Tab.Panel>Content 3</Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>

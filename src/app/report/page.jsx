@@ -18,9 +18,7 @@ export default async function Page({ searchParams }) {
               <p className="text-xl font-bold">{100 - data.violations.length - data.inapplicable.length - (data.incomplete.length / 53) * 100}%</p>
             </div>
           </div>
-          <p className=" text-center ">
-            Number of issues found: {data.violations.length} + {data.inapplicable.length} + {data.incomplete.length}
-          </p>
+          <p className=" text-center ">Antal problemer fundet: {data.violations.length + data.inapplicable.length + data.incomplete.length}</p>
         </article>
         {/* <div className="">
           <hr className="rotate-90" />

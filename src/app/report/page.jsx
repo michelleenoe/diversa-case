@@ -10,7 +10,7 @@ export default async function Page({ searchParams }) {
   return (
     <main>
       <section className="grid grid-cols-2">
-        <article className="grid	justify-center	p-8	">
+        <article className="grid  justify-center  p-8 ">
           <h1 className="text-xl">Report for {data.url}</h1>
           <div className="grid justify-items-center">
             <h2 className="text-2xl">Din score er</h2>

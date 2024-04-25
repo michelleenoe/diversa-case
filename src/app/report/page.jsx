@@ -15,8 +15,8 @@ export default async function Page({ searchParams }) {
             <p>Found {data.violations.length} issues</p>
 
             <div>
-                <p>Number of issues found: {data.violations.length}</p>
-                <p>Din score er {100 - data.violations.length / 53 * 100}%</p>
+                <p>Number of issues found: {data.violations.length} + {data.inapplicable.length} + {data.incomplete.length}</p>
+                <p>Din score er {100 - data.violations.length - data.inapplicable.length - data.incomplete.length / 53 * 100}%</p>
                 {data.violations.map((violation, index) => (
                     <div key={index}>
                         <h2>{violation.description}</h2>

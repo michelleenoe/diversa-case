@@ -6,8 +6,6 @@ export default function RuleDetail() {
     const { id } = router.query;
     const rule = rulesData.find(rule => rule.id === id) || rulesData.find(rule => rule.id === "Lorem ipsum");
 
-
-
     return (
         <main>
             <h1>{rule.header}</h1>

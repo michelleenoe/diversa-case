@@ -22,7 +22,7 @@ export default function TabView({ data }) {
           {Object.keys(categories).map((category) => (
             <Tab key={category} className={({ selected }) => classNames(" rounded-t-2xl py-3 px-10", selected ? "flex items-center justify-center gap-6 bg-tabbgcolor text-blue-700 " : "flex bg-tabtopnotactive items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 ] hover:text-white")}>
               <div className="p-2 w-10 h-10 aspect-square rounded-full bg-secondarycolor">
-                <p className="">{category.length}</p>
+                <p className="">{categories[category].length}</p>
               </div>
               {category}
             </Tab>

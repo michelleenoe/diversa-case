@@ -1,4 +1,6 @@
 import { baskerville } from "./fonts";
+import Button from "@/components/Button";
+import React from "react";
 
 export default function Home() {
   return (
@@ -28,12 +30,13 @@ export default function Home() {
                 name="url"
                 required
               />
-              <button
+              {/* <button
                 type="submit"
                 className="bg-primarycolor02 hover:bg-primarycolorvariant03 text-white px-6 py-3 rounded-full"
               >
                 Få report
-              </button>
+              </button> */}
+              <Button title="Få Report" type="submit" />
             </div>
           </div>
         </form>

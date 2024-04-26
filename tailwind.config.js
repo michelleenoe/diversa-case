@@ -15,6 +15,8 @@ module.exports = {
       inputfieldcolor: "#ccc",
       tabbordercolor: "#666",
       bgcolor: "#f7f6e8",
+      tabbgcolor: "#F9F9FA",
+      tabtopnotactive: "#D9D9D9",
     },
     extend: {
       backgroundImage: {

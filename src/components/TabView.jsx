@@ -20,7 +20,7 @@ export default function TabView({ data }) {
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl">
           {Object.keys(categories).map((category) => (
-            <Tab key={category} className={({ selected }) => classNames(" border border-b-0	 border-black rounded-t-2xl py-3 px-10", selected ? "flex items-center justify-center gap-6 bg-secondarycolor text-blue-700 shadow" : "flex items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 ] hover:text-white")}>
+            <Tab key={category} className={({ selected }) => classNames(" rounded-t-2xl py-3 px-10", selected ? "flex items-center justify-center gap-6 bg-tabbgcolor text-blue-700 " : "flex bg-tabtopnotactive items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 ] hover:text-white")}>
               <div className="p-2 w-10 h-10 aspect-square rounded-full bg-secondarycolor">
                 <p className="">{category.length}</p>
               </div>
@@ -28,7 +28,7 @@ export default function TabView({ data }) {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="border border-black w-max">
+        <Tab.Panels className=" bg-tabbgcolor w-max">
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel key={idx} className={classNames("rounded-xl bg-white p-3", "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2")}>
               <section>
@@ -50,11 +50,9 @@ export default function TabView({ data }) {
                         <p>{post.impact}</p>
                       </div>
                       <div>
-                        <button className="border py-2 px-8 rounded-full bg-primarycolorvariant03 transition-transform duration-300 ease-in-out hover:scale-105	">
-                          <Link href={"/"} prefetch={false}>
-                            Læs mere
-                          </Link>
-                        </button>
+                        <Link className="border py-2 px-8 rounded-full bg-primarycolorvariant03 transition-transform duration-300 ease-in-out hover:scale-105	" href={"/"} prefetch={false}>
+                          Læs mere
+                        </Link>
                       </div>
                     </li>
                   ))}

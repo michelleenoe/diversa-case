@@ -1,4 +1,6 @@
 import { baskerville } from "./fonts";
+import Button from "@/components/Button";
+import React from "react";
 
 export default function Home() {
   return (
@@ -27,12 +29,7 @@ export default function Home() {
             required
           />
         </div>
-        <button
-          type="submit"
-          className=" bg-primarycolor02 hover:bg-primarycolorvariant03   text-white font-bold px-4 py-3 rounded-full"
-        >
-          Get Report
-        </button>
+        <Button title="Click me" backgroundColor="" />
       </form>
     </div>
   );

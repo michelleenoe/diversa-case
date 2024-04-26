@@ -50,7 +50,7 @@ export default function TabView({ data }) {
                         <p>{post.impact}</p>
                       </div>
                       <div>
-                        <Link className="border py-2 px-8 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={"/"} prefetch={false}>
+                        <Link className="border py-2 px-8 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${post.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>

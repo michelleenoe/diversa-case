@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TabView from "@/components/TabView";
+import TabViewCopy from "@/components/TabViewCopy";
 export const revalidate = 1800;
 
 const beregnScore = (data) => {
@@ -38,6 +39,8 @@ export default async function Side({ searchParams }) {
       </section>
       <section className="gir">
         <TabView data={data} />
+
+        <TabViewCopy data={data} />
       </section>
     </main>
   );

@@ -9,9 +9,9 @@ function classNames(...classes) {
 
 export default function TabView({ data }) {
   let [categories] = useState({
-    Violations: data.violations,
-    Inapplicable: data.inapplicable,
-    Incomplete: data.incomplete,
+    Funktionsfejl: data.violations,
+    "Ikke anvendelig": data.inapplicable,
+    Ufuldendt: data.incomplete,
   });
   //console.log("violations", data.violations.length);
 

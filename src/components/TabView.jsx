@@ -13,10 +13,10 @@ export default function TabView({ data }) {
     Inapplicable: data.inapplicable,
     Incomplete: data.incomplete,
   });
-  console.log("violations", data.violations.length);
+  //console.log("violations", data.violations.length);
 
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0 m-4">
+    <div className="w-full max-w-mdx px-2 py-16 sm:px-0 m-4">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl">
           {Object.keys(categories).map((category) => (

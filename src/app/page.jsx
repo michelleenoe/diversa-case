@@ -29,7 +29,7 @@ export default function Home() {
             required
           />
         </div>
-        <Button title="Click me" backgroundColor="" />
+        <Button title="Få report" backgroundColor="" />
       </form>
     </div>
   );

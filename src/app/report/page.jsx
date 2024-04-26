@@ -36,7 +36,7 @@ export default async function Side({ searchParams }) {
           <Image className="w-3/4" alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
         </figure>
       </section>
-      <section className="gir">
+      <section className="">
         <TabView data={data} />
       </section>
     </main>

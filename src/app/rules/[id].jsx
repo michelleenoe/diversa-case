@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import rulesData from '../../data/rulesData.json';
+const { id } = router.query;
+
 
 export default function RuleDetail() {
     const router = useRouter();

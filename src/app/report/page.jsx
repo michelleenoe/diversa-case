@@ -19,15 +19,15 @@ export default async function Side({ searchParams }) {
   return (
     <main>
       <section className="grid grid-cols-2">
-        <article className="grid  justify-center  p-8 ">
+        <article className="grid  justify-center  p-8 gap-6">
           <h1 className="text-xl">Rapport for {data.url}</h1>
           <div className="grid justify-items-center">
             <h2 className="text-2xl">Din score er {score}%</h2>
-            <div className=" flex items-center p-10 w-2 h-2 aspect-square rounded-full bg-secondarycolor ">
-              <p className="text-xl font-bold">{SamletScoreBogstav(score)}</p>
+            <div className=" bg-secondarycolor aspect-square flex items-center justify-center rounded-full p-6">
+              <p className="text-2xl font-bold">{SamletScoreBogstav(score)}</p>
             </div>
           </div>
-          <p className=" text-center ">Antal problemer fundet: {data.violations.length + data.inapplicable.length + data.incomplete.length}</p>
+          <p className=" text-center">Antal problemer fundet: {data.violations.length + data.inapplicable.length + data.incomplete.length}</p>
         </article>
         {/* <div className="">
           <hr className="rotate-90" />

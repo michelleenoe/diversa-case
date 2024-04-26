@@ -9,7 +9,6 @@
   --full: minmax(var(--gap), 1fr);
   --content: min(45rem, 100% - var(--gap) * 2);
   --feature: minmax(0, 5rem);
-
   /* color */
   --primary-color-01: #69e3fc;
   --primary-color-02: #ffea80;
@@ -32,8 +31,8 @@
   --paragraph-text: clamp(0.9rem, 1.2vw, 0.9rem);
 
   /* line-height */
-  --default-line-height: 1.475;
-  --heading-large-line-height: 3.62;
+  --default-line-height: 1.6;
+  --heading-large-line-height: 1.5;
   --heading-medium-line-height: 3.26;
   --heading-small-line-height: 1.9;
   --list-line-height: 2.4;
@@ -60,8 +59,7 @@ body {
   font-size: var(--heading01);
   font-weight: var(--thick);
   line-height: var(--heading-large-line-height);
-  color: var(--primary03);
-  font-family: cabin;
+  color: var(--primary-text-color);
   font-style: normal;
 }
 
@@ -69,9 +67,7 @@ body {
   font-size: var(--heading02);
   font-weight: var(--thick);
   line-height: var(--default-line-height);
-  color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
+  color: var(--primary-text-color);
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
@@ -80,9 +76,7 @@ body {
   font-size: var(--heading06);
   font-weight: var(--medium);
   line-height: var(--heading-small-line-height);
-  color: var(--primary03);
-  font-family: cabin;
-  font-style: normal;
+  color: var(--primary-text-color);
   margin-bottom: 1rem;
 }
 
@@ -90,12 +84,33 @@ body {
   font-size: var(--paragraph-text);
   font-weight: var(--normal);
   line-height: var(--default-line-height);
-  color: var(--paragraph-color);
-  font-family: "lato", sans-serif;
-  font-style: normal;
+  color: var(--primary-text-color);
 }
 
-p,
-li {
-  max-inline-size: 67ch;
+input:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}
+button:focus-visible {
+  outline: 2px solid var(--secondary-color);
+}
+
+.custom-grid {
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-grid {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }

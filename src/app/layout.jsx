@@ -1,7 +1,7 @@
 import "./globals.css";
 import "./reset.css";
-import Header from "@/components/Header";
 import { poppins } from "./fonts";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +13,9 @@ export default function Layout({ children }) {
     <html lang="en" className={poppins.className}>
       <body>
         <Header />
-        <div>{children}</div>
+        <main>
+          <div>{children}</div>
+        </main>
       </body>
     </html>
   );

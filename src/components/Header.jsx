@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function Header() {
   return (
     <>
-      <nav className="flex items-center justify-between  px-8">
+      <nav className="flex items-center justify-between px-8">
         <div>
           <Link href={"/"}>
             <img
@@ -16,9 +16,9 @@ export default function Header() {
         </div>
 
         <ul className="flex items-center medium-size">
-          <li>
+          <li className=" bg-primarycolor01 hover:bg-primarycolorvariant01 px-5 py-3 rounded-full">
             <Link href={"/rules"} prefetch={false}>
-              <Button title="Regelsæt" backgroundColor="#69e3fc" />
+              Regelsæt
             </Link>
           </li>
         </ul>

@@ -17,11 +17,9 @@ export default function Header() {
 
         <ul className="flex items-center medium-size">
           <li>
-            <Button
-              href={"/rules"}
-              title="Regelsæt"
-              backgroundColor="#69e3fc"
-            />
+            <Link href={"/rules"} prefetch={false}>
+              <Button title="Regelsæt" backgroundColor="#69e3fc" />
+            </Link>
           </li>
         </ul>
       </nav>

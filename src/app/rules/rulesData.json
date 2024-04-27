@@ -9,8 +9,8 @@
     "impact": "Alvorlig",
     "tags": ["cat.keyboard", "best-practice"],
     "issuetype": "fejl",
-    "howtofix": "Hvordan skal vi fikse problemet?",
-    "whyitmatters": "Hvorfor er det vigtigt?"
+    "howtofix": "Fjern eller juster 'tabindex'-værdier, så de ikke overstiger 0. Dette gør navigationsrækkefølgen mere forudsigelig og tilgængelig for tastaturbrugere.",
+    "whyitmatters": "At have en 'tabindex' større end 0 kan forstyrre den naturlige navigationsrækkefølge, hvilket gør det vanskeligt for brugere med begrænsede mobilitetsfunktioner at navigere på siden."
   },
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/aria-allowed-role",
@@ -22,22 +22,24 @@
     "impact": "Mindre",
     "tags": ["cat.aria", "best-practice"],
     "issuetype": ["fejl", "behov for gennemgang"],
-    "howtofix": "Hvordan skal vi fikse problemet?",
-    "whyitmatters": "Hvorfor er det vigtigt?"
+    "howtofix": "Gennemgå og rette ARIA-rolleattributter for at sikre, at de er passende for deres respektive elementer og overholder WAI-ARIA specifikationerne.",
+    "whyitmatters": "Korrekt brug af ARIA-roller øger tilgængeligheden ved at give skærmlæsere og andre hjælpeteknologier korrekt kontekst om elementernes funktion og formål."
   },
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/empty-heading",
     "id": "empty-heading",
     "ruleset": "axe-core 4.9",
     "header": "Overskrifter bør ikke være tomme",
-    "description": "Sikrer, at tabindex-attributværdier ikke er større end 0",
-    "descriptionlong": "En tabindex-attribut må aldrig have en værdi større end 0 for at forhindre en uventet tabulatorrækkefølge, der kan give indtryk af at springe nogle elementer helt over.",
+    "description": "Sikrer, at overskrifter indeholder tekst for at give struktur og kontekst.",
+    "descriptionlong": "Tomme overskrifter kan skabe forvirring for brugere, der anvender skærmlæsere, da disse afhænger af overskrifter til at navigere og forstå indholdets struktur.",
     "impact": "Alvorlig",
     "tags": ["cat.keyboard", "best-practice"],
     "issuetype": "fejl",
-    "howtofix": "Hvordan skal vi fikse problemet?",
-    "whyitmatters": "Hvorfor er det vigtigt?"
+    "howtofix": "Tilføj relevant tekst til alle tomme overskrifter for at forbedre navigationen og informationsstrukturen på siden.",
+    "whyitmatters": "Overskrifter strukturerer indholdet og guider brugere gennem websider. Tomme overskrifter kan føre til forvirring og vanskeliggøre navigationen for personer, der bruger skærmlæsere."
   },
+
+
   {
     "id": "Lorem ipsum",
     "ruleset": "axe-core 4.9",

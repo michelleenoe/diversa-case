@@ -39,8 +39,8 @@
     "whyitmatters": "Overskrifter strukturerer indholdet og guider brugere gennem websider. Tomme overskrifter kan føre til forvirring og vanskeliggøre navigationen for personer, der bruger skærmlæsere."
   },
 
-
   {
+    "url": "https://dequeuniversity.com/rules/axe/4.9/lorem-ipsum",
     "id": "Lorem ipsum",
     "ruleset": "axe-core 4.9",
     "header": "Lorem ipsum dolor",

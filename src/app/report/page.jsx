@@ -5,6 +5,7 @@ export const revalidate = 1800;
 const beregnScore = (data) => {
     const antalProblemer = data.violations.length + data.inapplicable.length + data.incomplete.length;
     return Math.round(100 - (antalProblemer / 58) * 100);
+{/*https://dequeuniversity.com/rules/axe/html/4.9 der er 58 på hjemmesiden*/}
 };
 
 const SamletScoreBogstav = (score) => (score <= 33 ? "C" : score <= 66 ? "B" : "A");

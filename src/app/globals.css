@@ -54,6 +54,9 @@
 body {
   background: var(--background-color);
 }
+.link {
+  font-weight: var(--medium);
+}
 
 .large-size {
   font-size: var(--heading01);

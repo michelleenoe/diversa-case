@@ -8,11 +8,11 @@ export default function Home() {
       <div className="flex flex-col items-center">
         <div className="large-size pb-5 max-w-2xl">
           <h1 className={baskerville.className}>
-            Velkommen til vores Værktøj til Tilgængelighedsrapportering
+            Velkommen til vores værktøj til tilgængelighedsrapportering
           </h1>
         </div>
         <p className="pb-8 small-size max-w-2xl">
-          Vores Tilgængelighedsrapportværktøj viser forbedringsområder og
+          Vores tilgængelighedsrapportværktøj viser forbedringsområder og
           overholdelse af standarder for dit webindhold. Sikre tilgængelighed
           for et bredt publikum og en inkluderende onlineoplevelse. Start
           forbedringen i dag!

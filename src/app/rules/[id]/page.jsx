@@ -1,4 +1,5 @@
 import rulesData from '../rulesData.json';
+import { baskerville } from "../../fonts";
 
 export default function RuleDetail({ params }) {
     const { id } = params;
@@ -7,9 +8,9 @@ export default function RuleDetail({ params }) {
     return (
         <main>
             <div className="custom-grid">
-                <section className="max-w-[var(--content-width)] mx-auto bg-white rounded-[var(--card-border-radius)] shadow-lg overflow-hidden">
-                    <div className="p-6 space-y-4">
-                        <h1 className="large-size">{rule.header}</h1>
+                <section className="max-w-[var(--content-width)] mx-auto  shadow-lg overflow-hidden">
+                    <div className="p-6 space-y-4 large-size max-w-2xl">
+                        <h1 className={baskerville.className}>{rule.header}</h1>
                         <p className="small-size">{rule.descriptionlong}</p>
                         <div className="space-y-2">
                             <p className="normal-size">

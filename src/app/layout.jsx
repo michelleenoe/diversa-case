@@ -13,8 +13,8 @@ export default function Layout({ children }) {
     <html lang="en" className={poppins.className}>
       <body>
         <Header />
-        <main>
-          <div>{children}</div>
+        <main className=" grid grid-cols-gridContent">
+          <div className="col-start-2">{children}</div>
         </main>
       </body>
     </html>

@@ -4,9 +4,9 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="custom-grid pt-10">
-      <div className="flex flex-col items-center">
-        <div className="large-size pb-5 max-w-2xl">
+    <div className=" pt-10">
+      <div>
+        <div className="large-size pb-6 max-w-2xl">
           <h1 className={baskerville.className}>
             Velkommen til vores værktøj til tilgængelighedsrapportering
           </h1>
@@ -17,7 +17,7 @@ export default function Home() {
           for et bredt publikum og en inkluderende onlineoplevelse. Start
           forbedringen i dag!
         </p>
-        <form className="flex flex-col items-center gap-6" action="/report">
+        <form action="/report">
           <div className="flex flex-col ">
             <label htmlFor="url" className="small-size pb-2">
               Indtast venligst URL
@@ -30,12 +30,6 @@ export default function Home() {
                 name="url"
                 required
               />
-              {/* <button
-                type="submit"
-                className="bg-primarycolor02 hover:bg-primarycolorvariant03 text-white px-6 py-3 rounded-full"
-              >
-                Få report
-              </button> */}
               <Button title="Få Report" type="submit" />
             </div>
           </div>

@@ -8,7 +8,7 @@ export default function Header() {
         <div>
           <Link href={"/"}>
             <img
-              src="images/diversa-logo.svg"
+              src="../images/diversa-logo.svg"
               alt="Diversa Logo"
               className="h-8 w-auto"
             />

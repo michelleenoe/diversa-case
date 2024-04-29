@@ -36,11 +36,15 @@ export default function TabView({ data }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const filteredCategories = Object.keys(categories).filter(
+    (category) => categories[category].length > 0
+  );
+
   return (
     <div className="px-2 py-16 sm:px-0 ">
       <Tab.Group>
         <Tab.List
-          className="flex space-x-1 rounded-xl p-1"
+          className="flex space-x-1 rounded-xl p-1 items-center "
           ref={tabListRef}
           onKeyDown={(e) => {
             if (e.key === "ArrowRight") {
@@ -58,13 +62,12 @@ export default function TabView({ data }) {
           }}
           tabIndex={0}
         >
-          {Object.keys(categories).map((category, index) => (
+          {filteredCategories.map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-full flex justify-center items-center gap-5 rounded-lg py-2.5 text-sm font-medium leading-5 focus:outline-none  ",
-                  "focus:outline-none",
+                  "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5",
                   selected
                     ? "bg-tabbgcolor text-secondarycolor-700 shadow"
                     : "bg-tabtopnotactive text-secondarycolor-100 hover:bg-primarycolor02 hover:bg-white/[0.12] hover:text-white"
@@ -73,21 +76,21 @@ export default function TabView({ data }) {
             >
               {/* Render the div only if it's not a small screen */}
               {!isSmallScreen && (
-                <div className=" pt-2 w-9 h-9 aspect-square rounded-full bg-cColor">
-                  <p className="">{categories[category].length}</p>
+                <div className="pt-2 w-9 h-9 aspect-square small-size rounded-full bg-cColor">
+                  <p>{categories[category].length}</p>
                 </div>
               )}
               {category}
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="bg-tabbgcolor mt-2">
+        <Tab.Panels className="bg-tabbgcolor mt-2 max-w-4xl">
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
               key={idx}
               className={classNames(
                 "rounded-xl bg-white p-3",
-                "ring-white ring-offset-2 ring-offset-secondarycolor focus:outline-none focus:ring-2"
+                "ring-white ring-offset-2 ring-offset-secondarycolor"
               )}
             >
               <section>
@@ -97,18 +100,22 @@ export default function TabView({ data }) {
                     rules
                   </p>
                 </div>
-                <ul>
+                <ul className="grid gap-y-8 gap-x-4">
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="relative rounded-md p-3 hover:bg-gray-100"
+                      className="flex justify-between items-center py-8 px-10 first:border-y last:border-0 border-b border-y-tabbordercolor"
                     >
-                      <div className="flex-shrink-0 md:mr-4">
+                      <div className="md:mr-4">
                         <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                       </div>
-                      <div className="flex-grow md:max-w-md">
-                        <h2 className="small-size">{post.description}</h2>
-                        <h3 className="small-size">{post.help}</h3>
+                      <div className="max-w-lg">
+                        <div className="flex justify-center">
+                          <div className="max-w-lg">
+                            <h2 className="small-size">{post.description}</h2>
+                            <h3 className="small-size">{post.help}</h3>
+                          </div>
+                        </div>
                       </div>
                       <div>
                         <Link

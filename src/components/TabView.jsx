@@ -100,7 +100,7 @@ export default function TabView({ data }) {
                     rules
                   </p>
                 </div>
-                <ul className="grid gap-y-8 gap-x-4">
+                <ul className="px-4 md:px-16">
                   {posts.map((post) => (
                     <li
                       key={post.id}

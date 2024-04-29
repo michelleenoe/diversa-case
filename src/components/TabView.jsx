@@ -17,12 +17,23 @@ export default function TabView({ data }) {
 
   // Ref for tab navigation
   const tabListRef = useRef(null);
+  // State to track if the screen is small
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   // Effect to focus on the first tab when component mounts
   useEffect(() => {
     if (tabListRef.current) {
       tabListRef.current.focus();
     }
+    // Add event listener to check for screen size changes
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 640);
+    };
+    window.addEventListener("resize", handleResize);
+    // Call handleResize to set initial screen size state
+    handleResize();
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -52,7 +63,7 @@ export default function TabView({ data }) {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "w-full flex justify-center gap-6 rounded-lg py-2.5 text-sm font-medium leading-5",
+                  "w-full flex justify-center items-center gap-5 rounded-lg py-2.5 text-sm font-medium leading-5",
                   "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                   selected
                     ? "bg-white text-blue-700 shadow"
@@ -60,9 +71,12 @@ export default function TabView({ data }) {
                 )
               }
             >
-              <div className="p-2 w-10 h-10 aspect-square rounded-full bg-cColor">
-                <p className="">{categories[category].length}</p>
-              </div>
+              {/* Render the div only if it's not a small screen */}
+              {!isSmallScreen && (
+                <div className=" pt-2 w-9 h-9 aspect-square rounded-full bg-cColor">
+                  <p className="">{categories[category].length}</p>
+                </div>
+              )}
               {category}
             </Tab>
           ))}
@@ -73,7 +87,7 @@ export default function TabView({ data }) {
               key={idx}
               className={classNames(
                 "rounded-xl bg-white p-3",
-                "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                "ring-secondarycolor ring-offset-2 ring-offset-secondarycolor focus:outline-none focus:ring-2"
               )}
             >
               <section>

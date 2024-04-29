@@ -4,19 +4,19 @@ export default function Footer() {
   return (
     <>
       <footer className=" pt-20">
-        <div className="flex justify-between border-t mx-16 py-4 px-16">
-          <div>
+        <div className="lg:flex lg:justify-between border-t mx-16 py-4 px-16">
+          <div className="p-4">
             <p className="font-bold">Multimediedesign </p>
             <p>Frontend Design 2024</p>
             <p>Charlie Tango - Diversacase</p>
           </div>
-          <div>
+          <div className="p-4">
             <p className="font-bold">Github:</p>
             <Link target="_blank" href="https://github.com/michelleenoe/diversa-case" prefetch={false}>
               <p className="  hover:underline ">Se git-repository</p>
             </Link>
           </div>
-          <div>
+          <div className="p-4">
             <p className="font-bold">Gruppe:</p>
             <p>Andrea Damgaard Hegner</p>
             <p>Andrea Jean Hauberg</p>

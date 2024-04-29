@@ -25,7 +25,7 @@ export default async function Side({ searchParams }) {
   const score = beregnScore(data);
 
   return (
-    <main>
+    <>
       <section className="grid grid-cols-1 sm:grid-cols-2  pt-10">
         <article className="grid  justify-center">
           <div className="medium-size">
@@ -60,6 +60,6 @@ export default async function Side({ searchParams }) {
       <section className="">
         <TabView data={data} />
       </section>
-    </main>
+    </>
   );
 }

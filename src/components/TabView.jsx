@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { baskerville } from "@/app/fonts";
@@ -16,40 +16,46 @@ export default function TabView({ data }) {
   });
 
   const tabListRef = useRef(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(false);
 
-  const scrollTabs = (direction) => {
-    if (tabListRef.current) {
-      const { scrollLeft, clientWidth } = tabListRef.current;
-      const scrollBy = direction === 'left' ? -clientWidth : clientWidth;
-      tabListRef.current.scrollTo({ left: scrollLeft + scrollBy, behavior: 'smooth' });
-    }
-  };
+  useEffect(() => {
+    const updateArrows = () => {
+      if (tabListRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = tabListRef.current;
+        setShowLeftArrow(scrollLeft > 0);
+        setShowRightArrow(scrollLeft < scrollWidth - clientWidth);
+      }
+    };
+
+    // Call it on mount and set up an event listener for resizing
+    updateArrows();
+    window.addEventListener('resize', updateArrows);
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener('resize', updateArrows);
+    };
+  }, []);
 
   return (
     <div className="px-2 py-16 sm:px-0 m-4 relative">
       <Tab.Group>
         <div className="flex items-center relative">
-          <Tab.List className="flex overflow-x-auto snap-x snap-mandatory space-x-1 rounded-xl" ref={tabListRef}>
-            {/* Custom Left Arrow */}
-            <button
-              onClick={() => scrollTabs('left')}
-              className="absolute left-0 z-10 mx-2 text-2xl" // Adjust font size as needed
-              aria-label="Scroll left"
-            >
-              &lsaquo;
-            </button>
+          <Tab.List className="flex space-x-1 rounded-xl" ref={tabListRef}>
+            {showLeftArrow && (
+              <span className="absolute left-0 z-10 mx-2 text-2xl" aria-hidden="true">
+                &lsaquo;
+              </span>
+            )}
             {Object.keys(categories).map((category) => (
-              <Tab
-                key={category}
-                className={({ selected }) =>
-                  classNames(
-                    "snap-start shrink-0",
-                    "rounded-t-2xl py-3 px-10 small-size relative z-0",
-                    selected
-                      ? "flex w-full sm:w-auto items-center justify-center gap-6 bg-tabbgcolor text-blue-700 "
-                      : "flex w-full sm:w-auto bg-tabtopnotactive items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 hover:text-white"
-                  )
-                }
+              <Tab key={category} className={({ selected }) =>
+                classNames(
+                  "rounded-t-2xl py-3 px-10 small-size",
+                  selected
+                    ? "bg-tabbgcolor text-blue-700 "
+                    : "bg-tabtopnotactive text-blue-100 hover:bg-primarycolor02 hover:text-white"
+                )}
               >
                 <div className="p-2 w-10 h-10 aspect-square rounded-full bg-cColor">
                   <p className="">{categories[category].length}</p>
@@ -57,14 +63,11 @@ export default function TabView({ data }) {
                 {category}
               </Tab>
             ))}
-            {/* Custom Right Arrow */}
-            <button
-              onClick={() => scrollTabs('right')}
-              className="absolute right-0 z-10 mx-2 text-2xl" // Adjust font size as needed
-              aria-label="Scroll right"
-            >
-              &rsaquo;
-            </button>
+            {showRightArrow && (
+              <span className="absolute right-0 z-10 mx-2 text-2xl" aria-hidden="true">
+                &rsaquo;
+              </span>
+            )}
           </Tab.List>
         </div>
         <Tab.Panels className="bg-tabbgcolor col-span-4">

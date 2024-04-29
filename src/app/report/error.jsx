@@ -1,9 +1,9 @@
 "use client"
-export default function ReportError() {
+export default function RapportFejl() {
   return (
     <div>
-      <h1>Error Generating Report</h1>
-      <p>There was an error generating the report. Please try again.</p>
+      <h1>Fejl ved generering af rapport</h1>
+      <p>Der opstod en fejl under genereringen af rapporten. Prøv venligst igen.</p>
     </div>
   );
 }

@@ -1,89 +1,104 @@
 "use client";
 import Link from "next/link";
 import { Disclosure } from "@headlessui/react";
+import rulesData from "../rules/rulesData.json";
 
-export default function RulesPage() {
+export default function RulesPage({ params }) {
+  const { id } = params;
+
+  const firstRule = rulesData[0];
+  const secondRule = rulesData[1];
+  const thirdRule = rulesData[2];
+  const loremRule = rulesData[3];
+
   return (
     <>
-      <section className="">
+      <section className="w-full">
         <article>
           <h1>Her kan du se en komplet liste af alle regler der bliver testet på, samt læse nærmere om dem.</h1>
         </article>
-        <Disclosure>
-          {({ open }) => (
-            <>
-              <Disclosure.Button className="rounded-t-2xl py-3 px-10 bg-tabbgcolor flex justify-between text-left text-2xl p-2">
-                <h1 className="">WCAG 2.0 Level A & AA regler</h1>
-                <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-start justify-center `}>
-                  <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                  </svg>
-                </div>
-              </Disclosure.Button>
-              <Disclosure.Panel className="bg-tabbgcolor">
-                <ul className="">
-                  <li className="flex justify-between items-center py-8 pl-6 pr-20 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-                    <div className="flex ">
-                      <div className="p-2 w-4 h-4 aspect-square rounded-full bg-secondarycolor"></div>
-                    </div>
-                    <div className="w-2/5">
-                      <h2 className=" font-bold ">area-alt</h2>
-                      <p>Ensures area elements of image maps have alternate text </p>
-                      <p className=" pt-2 ">Issue Type: Failure, needs review</p>
-                    </div>
-                    <div className=" text-center ">
-                      <p>Impact:</p>
-                      <p>Kritisk</p>
-                    </div>
-                    <div>
-                      <Link className="border py-2 px-8 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
-                        Læs mere
-                      </Link>
-                    </div>
-                  </li>
-                  <li className="flex justify-between items-center py-8 pl-6 pr-20 gap-8 first:border-y border-b border-y-primarytextcolor">
-                    <div className="flex ">
-                      <div className="p-2 w-4 h-4 aspect-square rounded-full bg-secondarycolor"></div>
-                    </div>
-                    <div className="w-2/5">
-                      <h2 className=" font-bold ">area-alt</h2>
-                      <p>Ensures area elements of image maps have alternate text </p>
-                      <p className=" pt-2 ">Issue Type: Failure, needs review</p>
-                    </div>
-                    <div className=" text-center ">
-                      <p>Impact:</p>
-                      <p>Kritisk</p>
-                    </div>
-                    <div>
-                      <Link className="border py-2 px-8 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
-                        Læs mere
-                      </Link>
-                    </div>
-                  </li>
-                  <li className="flex justify-between items-center py-8 pl-6 pr-20 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-                    <div className="flex ">
-                      <div className="p-2 w-4 h-4 aspect-square rounded-full bg-secondarycolor"></div>
-                    </div>
-                    <div className="w-2/5">
-                      <h2 className=" font-bold ">area-alt</h2>
-                      <p>Ensures area elements of image maps have alternate text </p>
-                      <p className=" pt-2 ">Issue Type: Failure, needs review</p>
-                    </div>
-                    <div className=" text-center ">
-                      <p>Impact:</p>
-                      <p>Kritisk</p>
-                    </div>
-                    <div>
-                      <Link className="border py-2 px-8 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
-                        Læs mere
-                      </Link>
-                    </div>
-                  </li>
-                </ul>
-              </Disclosure.Panel>
-            </>
-          )}
-        </Disclosure>
+        <div className="w-full max-w-2xl	 ">
+          <Disclosure>
+            {({ open }) => (
+              <>
+                <Disclosure.Button className="rounded-t-2xl py-3 px-10 bg-tabbgcolor flex gap-8 text-left text-2xl p-2">
+                  <h1 className="">WCAG 2.0 Level A & AA regler</h1>
+                  <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-start`}>
+                    <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                    </svg>
+                  </div>
+                </Disclosure.Button>
+                <Disclosure.Panel className="bg-tabbgcolor">
+                  <ul className="">
+                    <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
+                      <div className="lg:w-4/5">
+                        <h2 className=" font-bold ">{firstRule.id}</h2>
+                        <p className="pt-2">{firstRule.description} </p>
+                        <div className="pt-2 flex gap-2 ">
+                          <p className=" font-bold ">Fejl type:</p>
+                          <p className="  ">{firstRule.issuetype}</p>
+                        </div>
+                      </div>
+                      <div className="lg:w-1/5">
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
+                          Læs mere
+                        </Link>
+                      </div>
+                    </li>
+
+                    <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
+                      <div className="lg:w-4/5">
+                        <h2 className=" font-bold ">{secondRule.id}</h2>
+                        <p className="pt-2">{secondRule.description} </p>
+                        <div className="pt-2 flex gap-2 ">
+                          <p className=" font-bold ">Fejl type:</p>
+                          <p>{Array.isArray(secondRule.issuetype) ? secondRule.issuetype.join(", ") : secondRule.issuetype}</p>
+                        </div>
+                      </div>
+                      <div className="lg:w-1/5">
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
+                          Læs mere
+                        </Link>
+                      </div>
+                    </li>
+
+                    <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
+                      <div className="lg:w-4/5">
+                        <h2 className=" font-bold ">{thirdRule.id}</h2>
+                        <p className="pt-2">{thirdRule.description} </p>
+                        <div className="pt-2 flex gap-2 ">
+                          <p className=" font-bold ">Fejl type:</p>
+                          <p className="  ">{thirdRule.issuetype}</p>
+                        </div>
+                      </div>
+                      <div className="lg:w-1/5">
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
+                          Læs mere
+                        </Link>
+                      </div>
+                    </li>
+                    <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
+                      <div className="lg:w-4/5">
+                        <h2 className=" font-bold ">{loremRule.id}</h2>
+                        <p className="pt-2">{loremRule.description} </p>
+                        <div className="pt-2 flex gap-2 ">
+                          <p className=" font-bold ">Fejl type:</p>
+                          <p className="  ">{loremRule.issuetype}</p>
+                        </div>
+                      </div>
+                      <div className="lg:w-1/5">
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/`} prefetch={false}>
+                          Læs mere
+                        </Link>
+                      </div>
+                    </li>
+                  </ul>
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
+        </div>
         {/* 
         <Disclosure>
           <Disclosure.Button className=" text-left text-2xl">

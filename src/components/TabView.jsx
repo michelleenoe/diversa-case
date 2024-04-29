@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { baskerville } from "@/app/fonts";
@@ -14,21 +14,49 @@ export default function TabView({ data }) {
     "Ikke anvendelig": data.inapplicable,
     Ufuldendt: data.incomplete,
   });
-  //console.log("violations", data.violations.length);
+
+  // Ref for tab navigation
+  const tabListRef = useRef(null);
+
+  // Effect to focus on the first tab when component mounts
+  useEffect(() => {
+    if (tabListRef.current) {
+      tabListRef.current.focus();
+    }
+  }, []);
 
   return (
-    <div className="px-2 py-16 sm:px-0 m-4">
+    <div className="px-2 py-16 sm:px-0 ">
       <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl">
-          {Object.keys(categories).map((category) => (
+        <Tab.List
+          className="flex space-x-1 rounded-xl bg-blue-900/20 p-1"
+          ref={tabListRef}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowRight") {
+              e.preventDefault();
+              tabListRef.current?.children[
+                (e.target.tabIndex + 1) % Object.keys(categories).length
+              ]?.focus();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              tabListRef.current?.children[
+                (e.target.tabIndex - 1 + Object.keys(categories).length) %
+                  Object.keys(categories).length
+              ]?.focus();
+            }
+          }}
+          tabIndex={0}
+        >
+          {Object.keys(categories).map((category, index) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  " rounded-t-2xl py-3 px-10 small-size",
+                  "w-full flex justify-center gap-6 rounded-lg py-2.5 text-sm font-medium leading-5",
+                  "ring-white/60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                   selected
-                    ? "flex items-center justify-center gap-6 bg-tabbgcolor text-blue-700 "
-                    : "flex bg-tabtopnotactive items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 ] hover:text-white"
+                    ? "bg-white text-blue-700 shadow"
+                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
                 )
               }
             >
@@ -39,7 +67,7 @@ export default function TabView({ data }) {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="bg-tabbgcolor col-span-4">
+        <Tab.Panels className="mt-2">
           {Object.values(categories).map((posts, idx) => (
             <Tab.Panel
               key={idx}
@@ -55,22 +83,16 @@ export default function TabView({ data }) {
                     rules
                   </p>
                 </div>
-                <ul className="px-4 md:px-16">
-                  {" "}
-                  {/* Adjusted padding for responsiveness */}
+                <ul>
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="flex flex-col md:flex-row justify-between items-center py-8 first:border-y last:border-0 border-b border-y-tabbordercolor"
+                      className="relative rounded-md p-3 hover:bg-gray-100"
                     >
                       <div className="flex-shrink-0 md:mr-4">
-                        {" "}
-                        {/* Added margin for spacing */}
                         <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                       </div>
                       <div className="flex-grow md:max-w-md">
-                        {" "}
-                        {/* Adjusted width for responsiveness */}
                         <h2 className="small-size">{post.description}</h2>
                         <h3 className="small-size">{post.help}</h3>
                       </div>

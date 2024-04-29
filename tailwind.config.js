@@ -38,5 +38,17 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  corePlugins: {
+    outline: false,
+  },
+  plugins: [
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".outline-none": {
+          outline: "none",
+        },
+      };
+      addUtilities(newUtilities, ["responsive", "focus"]);
+    },
+  ],
 };

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Tab } from "@headlessui/react";
 import Link from "next/link";
 import { baskerville } from "@/app/fonts";
@@ -17,24 +17,6 @@ export default function TabView({ data }) {
 
   // Ref for tab navigation
   const tabListRef = useRef(null);
-  // State to track if the screen is small
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  // Effect to focus on the first tab when component mounts
-  useEffect(() => {
-    if (tabListRef.current) {
-      tabListRef.current.focus();
-    }
-    // Add event listener to check for screen size changes
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 640);
-    };
-    window.addEventListener("resize", handleResize);
-    // Call handleResize to set initial screen size state
-    handleResize();
-    // Cleanup
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const filteredCategories = Object.keys(categories).filter(
     (category) => categories[category].length > 0
@@ -67,19 +49,18 @@ export default function TabView({ data }) {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5",
+                  "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5 outline-none",
                   selected
                     ? "bg-tabbgcolor text-secondarycolor-700 shadow"
-                    : "bg-tabtopnotactive text-secondarycolor-100 hover:bg-primarycolor02 hover:bg-white/[0.12] hover:text-white"
+                    : "bg-tabtopnotactive text-secondarycolor-100",
+                  selected ? "" : "outline-none"
                 )
               }
             >
-              {/* Render the div only if it's not a small screen */}
-              {!isSmallScreen && (
-                <div className="pt-2 w-9 h-9 aspect-square small-size rounded-full bg-cColor">
-                  <p>{categories[category].length}</p>
-                </div>
-              )}
+              <div className="hidden md:block pt-2 w-9 h-9 aspect-square small-size rounded-full bg-cColor">
+                <p>{categories[category].length}</p>
+              </div>
+
               {category}
             </Tab>
           ))}
@@ -100,26 +81,26 @@ export default function TabView({ data }) {
                     rules
                   </p>
                 </div>
-                <ul className="px-4 md:px-16">
+                <ul className="small-size ">
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="flex flex-col md:flex-row justify-between items-center py-8 border-b border-y-tabbordercolor"
+                      className="flex flex-wrap items-center py-4 md:py-8 border-b border-y-tabbordercolor"
                     >
-                      <div className="md:mr-4">
+                      <div className="hidden md:block flex-shrink-0 mr-4">
                         <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                       </div>
-                      <div className="max-w-lg">
-                        <div className="flex justify-center">
-                          <div className="max-w-lg">
-                            <h2 className="small-size">{post.description}</h2>
-                            <h3 className="small-size">{post.help}</h3>
-                          </div>
-                        </div>
+                      <div className="flex-grow md:flex-grow-0 md:pl-4 max-w-md">
+                        <h2 className="small-size mb-1 max-w-md md:mb-0">
+                          {post.description}
+                        </h2>
+                        <h3 className="hidden md:block small-size max-w-md ">
+                          {post.help}
+                        </h3>
                       </div>
-                      <div>
+                      <div className="ml-auto py-4">
                         <Link
-                          className="bg-primarycolor02 hover:bg-primarycolorvariant03 px-5 py-3 rounded-full"
+                          className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full"
                           href={`/rules/${post.id}`}
                           prefetch={false}
                         >

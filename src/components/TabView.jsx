@@ -49,7 +49,7 @@ export default function TabView({ data }) {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5 outline-none",
+                  "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5 outline-none ",
                   selected
                     ? "bg-tabbgcolor text-secondarycolor-700 shadow"
                     : "bg-tabtopnotactive text-secondarycolor-100",
@@ -71,7 +71,7 @@ export default function TabView({ data }) {
               key={idx}
               className={classNames(
                 "rounded-xl bg-white p-3",
-                "ring-white ring-offset-2 ring-offset-secondarycolor"
+                "ring-white ring-offset-2 ring-offset-secondarycolor "
               )}
             >
               <section>
@@ -81,11 +81,11 @@ export default function TabView({ data }) {
                     rules
                   </p>
                 </div>
-                <ul className="small-size ">
+                <ul className="small-size md:px-8">
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="flex flex-wrap items-center py-4 md:py-8 border-b border-y-tabbordercolor"
+                      className="flex flex-wrap items-center py-4 md:px-8 md:py-8 border-b border-y-tabbordercolor first:border-y last:border-0"
                     >
                       <div className="hidden md:block flex-shrink-0 mr-4">
                         <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>

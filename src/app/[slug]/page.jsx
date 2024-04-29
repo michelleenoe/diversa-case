@@ -21,7 +21,7 @@ export default function RulesPage({ params }) {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className="rounded-t-2xl py-3 px-10 bg-tabbgcolor flex gap-8 text-left text-2xl p-2">
+                <Disclosure.Button className="rounded-t-2xl py-3 px-10 bg-tabbgcolor hover:bg-tabtopnotactive flex gap-8 text-left text-2xl p-2">
                   <h1 className="">WCAG 2.0 Level A & AA regler</h1>
                   <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-start`}>
                     <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">

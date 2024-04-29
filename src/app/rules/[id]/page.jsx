@@ -1,11 +1,18 @@
 import rulesData from "../rulesData.json";
 import { baskerville } from "@/app/fonts";
+import Link from "next/link";
 
 export default function RuleDetail({ params }) {
   const { id } = params;
+  const firstRule = rulesData[0];
+  const secondRule = rulesData[1];
+  const thirdRule = rulesData[2];
+  const loremRule = rulesData[3];
   const rule =
     rulesData.find((rule) => rule.id === id) ||
     rulesData.find((rule) => rule.id === "Lorem ipsum");
+
+
 
   return (
     <>
@@ -28,15 +35,10 @@ export default function RuleDetail({ params }) {
                 <p className="small-size">{rule.whyitmatters}</p>
               </p>
               <p className="small-size pt-3">
-                Læs mere her:{" "}
-                <a
-                  className="link"
-                  href={rule.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {rule.url}
-                </a>
+
+                <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/${rule.id}`} prefetch={false}>
+                  Gå til regelsæt
+                </Link>
               </p>
             </div>
           </div>

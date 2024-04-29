@@ -36,7 +36,7 @@ export default function RuleDetail({ params }) {
               </p>
               <p className="small-size pt-3">
 
-                <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/${rule.id}`} prefetch={false}>
+                <Link className=" bg-primarycolor02 hover:bg-primarycolorvariant03 px-5 py-3 rounded-full" href={`/${rule.id}`} prefetch={false}>
                   Gå til regelsæt
                 </Link>
               </p>

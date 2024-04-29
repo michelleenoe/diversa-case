@@ -15,7 +15,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <ul className="flex items-center medium-size">
+        <ul className="normal-size pt-4">
           <li className=" bg-primarycolor01 hover:bg-primarycolorvariant01 px-5 py-3 rounded-full">
             <Link href={"/rules"} prefetch={false}>
               Regelsæt

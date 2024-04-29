@@ -17,15 +17,15 @@ export default function TabView({ data }) {
   //console.log("violations", data.violations.length);
 
   return (
-    <div className="px-2 py-16 sm:px-0 m-4">
+    <div className="px-2 py-16 m-4">
       <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl">
+        <Tab.List className="flex space-x-1 rounded-xl overflow-hidden snap-x">
           {Object.keys(categories).map((category) => (
             <Tab
               key={category}
               className={({ selected }) =>
                 classNames(
-                  " rounded-t-2xl py-3 px-10 small-size",
+                  " rounded-t-2xl py-3 px-10 small-size snap-center",
                   selected
                     ? "flex items-center justify-center gap-6 bg-tabbgcolor text-blue-700 "
                     : "flex bg-tabtopnotactive items-center justify-center gap-6 text-blue-100 hover:bg-primarycolor02 ] hover:text-white"

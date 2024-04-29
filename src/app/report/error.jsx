@@ -14,7 +14,7 @@ export default function Rapportfejl() {
         <p className="pb-8 small-size max-w-2xl">
           Der opstod en fejl under genereringen af rapporten. Prøv venligst igen.
         </p>
-        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={"/"} prefetch={false}>
+        <Link className="bg-primarycolor02 hover:bg-primarycolorvariant03 px-5 py-3 rounded-full" href={"/"} prefetch={false}>
           Tilbage til forsiden
         </Link>
 

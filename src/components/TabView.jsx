@@ -104,7 +104,7 @@ export default function TabView({ data }) {
                   {posts.map((post) => (
                     <li
                       key={post.id}
-                      className="flex justify-between items-center py-8 px-10 first:border-y last:border-0 border-b border-y-tabbordercolor"
+                      className="flex flex-col md:flex-row justify-between items-center py-8 border-b border-y-tabbordercolor"
                     >
                       <div className="md:mr-4">
                         <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>

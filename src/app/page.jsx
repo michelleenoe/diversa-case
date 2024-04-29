@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="pt-10">
+    <div className="pt-10 mb-20">
       <div>
         <div className="large-size pb-6 max-w-2xl">
           <h1 className={baskerville.className}>Velkommen til vores værktøj til tilgængelighedsrapportering</h1>

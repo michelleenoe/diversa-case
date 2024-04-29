@@ -5,22 +5,22 @@ import { Disclosure } from "@headlessui/react";
 export default function RulesPage() {
   return (
     <>
-      <section className=" grid justify-center ">
+      <section className="">
         <article>
           <h1>Her kan du se en komplet liste af alle regler der bliver testet på, samt læse nærmere om dem.</h1>
         </article>
         <Disclosure>
           {({ open }) => (
             <>
-              <Disclosure.Button className=" text-left text-2xl flex justify-between p-2">
+              <Disclosure.Button className="rounded-t-2xl py-3 px-10 bg-tabbgcolor flex justify-between text-left text-2xl p-2">
                 <h1 className="">WCAG 2.0 Level A & AA regler</h1>
-                <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 text-purple-500`}>
+                <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-start justify-center `}>
                   <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
                   </svg>
                 </div>
               </Disclosure.Button>
-              <Disclosure.Panel className="">
+              <Disclosure.Panel className="bg-tabbgcolor">
                 <ul className="">
                   <li className="flex justify-between items-center py-8 pl-6 pr-20 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
                     <div className="flex ">
@@ -84,7 +84,7 @@ export default function RulesPage() {
             </>
           )}
         </Disclosure>
-
+        {/* 
         <Disclosure>
           <Disclosure.Button className=" text-left text-2xl">
             <h1 className="">WCAG 2.1 Level A & AA Rules</h1>
@@ -101,9 +101,9 @@ export default function RulesPage() {
           <Disclosure.Panel>
             <h2>hej</h2>
           </Disclosure.Panel>
-        </Disclosure>
+        </Disclosure> */}
 
-        <div className="pl-4 py-6">
+        {/* <div className="pl-4 py-6">
           <h1 className=" text-2xl ">Best Practices Rules</h1>
           <p>Rules that do not necessarily conform to WCAG success criterion but are industry accepted practices that improve the user experience.</p>
         </div>
@@ -121,7 +121,7 @@ export default function RulesPage() {
         </div>
         <div className="pl-4 py-6">
           <h1 className=" text-2xl ">Best Practices Rules</h1>
-        </div>
+        </div> */}
       </section>
     </>
   );

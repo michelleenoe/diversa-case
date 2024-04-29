@@ -17,7 +17,7 @@ export default function RuleDetail({ params }) {
         <section className="max-w-[var(--content-width)] mx-auto bg-white rounded-[var(--card-border-radius)] shadow-lg overflow-hidden">
           <div className="p-6 space-y-4">
             <div className={baskerville.className}>
-              <h1 className="large-size max-w-2xl">{rule.header}</h1>
+            <h1 className="large-size max-w-2xl">{rule.header}</h1>
             </div>
             <p className="small-size pb-4">{rule.descriptionlong}</p>
             <div>

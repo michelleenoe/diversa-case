@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { baskerville } from "../fonts";
 import { Disclosure } from "@headlessui/react";
 import rulesData from "../rules/rulesData.json";
 import { useState } from "react";
@@ -14,16 +15,24 @@ export default function RulesPage({ params }) {
 
   return (
     <>
-      <section className="w-full">
-        <article>
-          <h1>Her kan du se en komplet liste af alle regler der bliver testet på, samt læse nærmere om dem.</h1>
+      <section>
+        <article className="pt-10  p-6">
+          <div className="pb-6 max-w-2xl">
+           <h1 className={`${baskerville.className} large-size pb-6 max-w-2xl`}>
+            Her kan du se en komplet liste af alle regler der bliver testet på, samt læse nærmere om dem.
+            </h1>
+            <p className="mb-4 text-lg">Web Content Accessibility Guidelines, bedre kendt som WCAG, er standarder fastsat for at gøre internetindhold tilgængeligt for alle, inklusiv personer med forskellige typer af handicap. WCAG 2.0, som er den anden udgave af disse retningslinjer, er opdelt i tre tilgængelighedsniveauer: Level A, Level AA og Level AAA.</p>
+<p className="mb-8 text-base">Overholdelse af WCAG 2.0 Level A og AA er ikke blot en juridisk forpligtelse i mange jurisdiktioner for at undgå diskrimination af handicappede; det er også et skridt mod at skabe en mere inkluderende og universelt tilgængelig weboplevelse.</p>
+
+          </div>
         </article>
-        <div className="w-full max-w-2xl ">
+
+        <div className="w-12/12 max-w-2xl ">
           <Disclosure defaultOpen>
             {({ open }) => (
               <>
                 <Disclosure.Button className={`${open ? " bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive rounded-b-2xl"} rounded-t-2xl py-3 px-10 flex gap-8 text-left text-2xl p-2`}>
-                  <h1 className="">WCAG 2.0 Level A & AA regler</h1>
+                  <h2 className="">WCAG 2.0 Level A & AA regler</h2>
                   <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-start`}>
                     <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />

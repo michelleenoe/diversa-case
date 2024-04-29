@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Rapportfejl() {
   return (
-    <div className=" pt-10">
+    <div className="pt-10">
       <div>
         <div className="large-size pb-6 max-w-2xl">
           <h1 className={baskerville.className}>

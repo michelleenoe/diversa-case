@@ -10,6 +10,7 @@ export const metadata = {
 
 export default function Home() {
   return (
+    <section>
     <div className="pt-10 mb-20">
       <div>
         <div className="large-size pb-6 max-w-2xl">
@@ -29,5 +30,6 @@ export default function Home() {
         </form>
       </div>
     </div>
+    </section>
   );
 }

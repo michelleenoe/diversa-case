@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <>
       <footer className=" pt-20">
-        <div className="flex justify-between border-t py-4 px-16">
+        <div className="flex justify-between border-t mx-16 py-4 px-16">
           <div>
             <p className="font-bold">Multimediedesign </p>
             <p>Frontend Design 2024</p>
@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             <p className="font-bold">Github:</p>
             <Link target="_blank" href="https://github.com/michelleenoe/diversa-case" prefetch={false}>
-              <p className="  hover:underline "> Gå til repo</p>
+              <p className="  hover:underline ">Se git-repository</p>
             </Link>
           </div>
           <div>

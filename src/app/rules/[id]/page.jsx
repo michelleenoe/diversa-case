@@ -4,10 +4,7 @@ import Link from "next/link";
 
 export default function RuleDetail({ params }) {
   const { id } = params;
-  const firstRule = rulesData[0];
-  const secondRule = rulesData[1];
-  const thirdRule = rulesData[2];
-  const loremRule = rulesData[3];
+
   const rule =
     rulesData.find((rule) => rule.id === id) ||
     rulesData.find((rule) => rule.id === "Lorem ipsum");

@@ -2,6 +2,7 @@ import "./globals.css";
 import "./reset.css";
 import { poppins } from "./fonts";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function Layout({ children }) {
         <main className=" grid grid-cols-gridContent">
           <div className="col-start-2">{children}</div>
         </main>
+        <Footer />
       </body>
     </html>
   );

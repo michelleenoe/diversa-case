@@ -1,7 +1,7 @@
 [
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/tabindex",
-    "id": "Tabindex",
+    "id": "tabindex",
     "ruleset": "axe-core 4.9",
     "header": "Elementer bør ikke have en tabindex større end nul",
     "description": "Sikrer, at tabindex-attributværdier ikke er større end 0",
@@ -14,7 +14,7 @@
   },
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/aria-allowed-role",
-    "id": "Aria-allowed-role",
+    "id": "aria-allowed-role",
     "ruleset": "axe-core 4.9",
     "header": "ARIA-rolle bør være passende for elementet",
     "description": "Sikrer, at rolleattributten har en passende værdi for elementet",
@@ -27,7 +27,7 @@
   },
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/empty-heading",
-    "id": "Empty-heading",
+    "id": "empty-heading",
     "ruleset": "axe-core 4.9",
     "header": "Overskrifter bør ikke være tomme",
     "description": "Sikrer, at overskrifter indeholder tekst for at give struktur og kontekst.",
@@ -41,7 +41,7 @@
 
   {
     "url": "https://dequeuniversity.com/rules/axe/4.9/lorem-ipsum",
-    "id": "Lorem ipsum",
+    "id": "lorem ipsum",
     "ruleset": "axe-core 4.9",
     "header": "Lorem ipsum dolor",
     "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",

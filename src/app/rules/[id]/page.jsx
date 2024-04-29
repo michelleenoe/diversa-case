@@ -1,3 +1,4 @@
+"use client"
 import rulesData from "../rulesData.json";
 import { baskerville } from "@/app/fonts";
 import Link from "next/link";
@@ -7,9 +8,7 @@ export default function RuleDetail({ params }) {
 
   const rule =
     rulesData.find((rule) => rule.id === id) ||
-    rulesData.find((rule) => rule.id === "Lorem ipsum");
-
-
+    rulesData.find((rule) => rule.id === "Lorem ipsum")
 
   return (
     <>

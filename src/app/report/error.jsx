@@ -1,20 +1,23 @@
 "use client"
-import { baskerville } from "@/app/fonts";
+import { baskerville } from "../fonts";
 import Link from "next/link";
 
-export default function RapportFejl() {
+export default function Rapportfejl() {
   return (
-    <div className="flex items-center justify-center h-screen bg-bgcolor">
-      <div className="text-center">
-        <h1 className={`${baskerville.className} text-4xl font-bold mb-4`}>Fejl ved generering af rapport</h1>
-        <p className="text-lg text-primarytextcolor mb-8">
+    <div className=" pt-10">
+      <div>
+        <div className="large-size pb-6 max-w-2xl">
+          <h1 className={baskerville.className}>
+            Fejl ved generering af rapport
+          </h1>
+        </div>
+        <p className="pb-8 small-size max-w-2xl">
           Der opstod en fejl under genereringen af rapporten. Prøv venligst igen.
         </p>
-        <Link href="/" prefetch={false}>
-          <a className="text-primarycolor02 hover:text-primarycolorvariant03">
-            Tilbage til forsiden
-          </a>
+        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={"/"} prefetch={false}>
+          Tilbage til forsiden
         </Link>
+
       </div>
     </div>
   );

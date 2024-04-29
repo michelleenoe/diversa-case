@@ -22,7 +22,7 @@ module.exports = {
       tabbgcolor: "#F9F9FA",
       tabtopnotactive: "#D9D9D9",
       aColor: "#6ED669",
-      bBolor: "#FFD166",
+      bColor: "#FFD166",
       cColor: "#FF6B6B",
     },
     extend: {

@@ -4,7 +4,7 @@ import Button from "./Button";
 export default function Header() {
   return (
     <>
-      <nav className="flex items-center justify-between p-8">
+      <nav className="flex items-center justify-between pt-4 px-10">
         <div>
           <Link href={"/"}>
             <img

@@ -26,7 +26,7 @@
   --heading02: clamp(1.4rem, 2.3vw, 2.3125rem);
   --heading03: clamp(1.2rem, 2vw, 2rem);
   --heading04: clamp(1.8rem, 3vw, 3.1rem);
-  --heading05: clamp(1.1rem, 1.7vw, 1.475rem);
+  --heading05: clamp(1rem, 1.5vw, 1.1rem);
   --heading06: clamp(1.1rem, 1.6vw, 1.2625rem);
   --paragraph-text: clamp(0.9rem, 1.2vw, 0.9rem);
 
@@ -81,7 +81,7 @@ body {
 }
 
 .tab-size {
-  font-size: var(--heading06);
+  font-size: var(--heading05);
   font-weight: var(--medium);
   color: var(--primary-text-color);
 }

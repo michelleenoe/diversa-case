@@ -67,7 +67,7 @@ export default function TabView({ data }) {
                         </div>
                         <div className="flex-grow md:my-0 md:flex-grow md:pl-4 max-w-md text-center my-2">
                           <p>Impact:</p>
-                          <p>{post.impact}</p>
+                          <p>{post.impact === null || post.impact === 0 ? "Passed" : post.impact}</p>
                         </div>
                         <div className="md:ml-auto py-4">
                           <Link tabIndex="0" className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor" href={`/rules/${post.id}`} prefetch={false}>

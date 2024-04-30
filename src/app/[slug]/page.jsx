@@ -22,9 +22,9 @@ function RuleItem({ rule }) {
           </p>
         </div>
       </div>
-      <div className="lg:w-1/5">
+      <div className="lg:w-1/5 flex justify-end">
         <Link
-          className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03"
+          className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
           href={`/rules/${rule.id}`}
           prefetch={false}
         >
@@ -37,11 +37,11 @@ function RuleItem({ rule }) {
 
 // Function to handle dynamic styles
 function getDisclosureButtonClasses(open) {
-  return `${
-    open
-      ? "bg-tabbgcolor shadow-lg  hover:bg-tabtopnotactive"
-      : "bg-tabtopnotactive shadow-lg  rounded-b-2xl"
-  } rounded-t-2xl py-3 px-10 flex gap-8 text-left text-2xl p-2`;
+  return `
+  ${open ? "bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive"}
+  shadow-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor 
+  py-3 px-8 flex gap-8 text-left text-2xl
+`;
 }
 
 export default function RulesPage({ params }) {
@@ -79,7 +79,7 @@ export default function RulesPage({ params }) {
                     <Disclosure.Button
                       className={getDisclosureButtonClasses(open)}
                     >
-                      <h2 className="tab-size">
+                      <h2 className="tab-size whitespace-nowrap">
                         WCAG {version} Level A & AA regler
                       </h2>
                       <div
@@ -100,11 +100,9 @@ export default function RulesPage({ params }) {
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel
-                      className="bg-tabbgcolor shadow-lg 
+                      className={`bg-tabbgcolor shadow-lg 
 
-rounded-br-lg
-
-rounded-bl-lg rounded-tr-lg p-10 "
+                      rounded-xl p-10  mt-3`}
                     >
                       <ul>
                         {rulesData.map((rule, ruleIndex) => (

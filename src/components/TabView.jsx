@@ -61,7 +61,7 @@ export default function TabView({ data }) {
                         <div className="hidden md:block flex-shrink-0 mr-4">
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                         </div>
-                        <div className="flex-grow md:flex-grow-0 md:pl-4 max-w-md">
+                        <div className="flex-grow md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
                           <h2 className="small-size mb-1 max-w-md md:mb-0">{post.description}</h2>
                           <h3 className="hidden md:block small-size max-w-md ">{post.help}</h3>
                         </div>

@@ -1,7 +1,26 @@
-"use client";
+
 import rulesData from "../rulesData.json";
 import { baskerville } from "@/app/fonts";
 import Link from "next/link";
+
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const data = rulesData.find((rule) => rule.id === id) ||
+    rulesData.find((rule) => rule.id === "Lorem ipsum");
+
+
+    return {
+      title: data.id,
+      description: data.description,
+      openGraph: {
+        title: data.id,
+        description: data.descriptionlong,
+    
+      }
+    };
+
+  }
+
 
 export default function RuleDetail({ params }) {
   const { id } = params;

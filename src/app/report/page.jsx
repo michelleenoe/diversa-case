@@ -36,8 +36,8 @@ export default async function Side({ searchParams }) {
 
   return (
     <>
-      <div className="flex justify-center px-2 py-16 sm:px-0">
-        <div className="max-w-6xl mx-auto w-full">
+      <div className=" grid grid-cols-gridContent px-2 py-16 sm:px-0">
+        <div className=" col-start-2 col-end-5">
           <div className="medium-size text-center pb-0 md:pb-8">
             <h1 className={baskerville.className}>Rapport for {data.url}</h1>
           </div>

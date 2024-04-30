@@ -50,11 +50,10 @@ export default function TabView({ data }) {
                 key={category}
                 className={({ selected }) =>
                   classNames(
-                    "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5 outline-none ",
+                    "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor ",
                     selected
                       ? "bg-tabbgcolor text-secondarycolor-700 shadow"
-                      : "bg-tabtopnotactive text-secondarycolor-100",
-                    selected ? "" : "outline-none"
+                      : "bg-tabtopnotactive text-secondarycolor-100"
                   )
                 }
               >
@@ -72,7 +71,7 @@ export default function TabView({ data }) {
                 key={idx}
                 className={classNames(
                   "rounded-xl bg-white p-3",
-                  "ring-white ring-offset-2 ring-offset-secondarycolor "
+                  "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                 )}
               >
                 <section>
@@ -101,7 +100,8 @@ export default function TabView({ data }) {
                         </div>
                         <div className="ml-auto py-4">
                           <Link
-                            className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full"
+                            tabIndex="0"
+                            className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                             href={`/rules/${post.id}`}
                             prefetch={false}
                           >

@@ -22,7 +22,7 @@ module.exports = {
       tabbgcolor: "#F9F9FA",
       tabtopnotactive: "#D9D9D9",
       aColor: "#6ED669",
-      bBolor: "#FFD166",
+      bColor: "#FFD166",
       cColor: "#FF6B6B",
     },
     extend: {
@@ -31,11 +31,23 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-
       gridTemplateColumns: {
         gridContent:
-          " minmax(var(--gap), 1fr) minmax(0, auto) minmax(var(--gap), 1fr)",
+          "[full-start] var(--full) [feature-start] var(--feature) [content-start] var(--content) [content-end] var(--feature) [feature-end] var(--full) [full-end]",
       },
+      ringOffsetWidth: {
+        2: "2px",
+      },
+      ringWidth: {
+        2: "2px",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      ringWidth: ["focus"],
+      ringOffsetWidth: ["focus"],
+      ringColor: ["focus"],
     },
   },
   plugins: [],

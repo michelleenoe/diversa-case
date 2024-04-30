@@ -60,7 +60,6 @@ body {
 
 .large-size {
   font-size: var(--heading01);
-  font-weight: var(--thick);
   line-height: var(--heading-large-line-height);
   color: var(--primary-text-color);
   font-style: normal;
@@ -77,10 +76,14 @@ body {
 
 .normal-size {
   font-size: var(--heading06);
-  font-weight: var(--medium);
-  line-height: var(--heading-small-line-height);
   color: var(--primary-text-color);
   margin-bottom: 1rem;
+}
+
+.tab-size {
+  font-size: var(--heading06);
+  font-weight: var(--medium);
+  color: var(--primary-text-color);
 }
 
 .small-size {

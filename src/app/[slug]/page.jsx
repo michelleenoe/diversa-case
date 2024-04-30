@@ -9,8 +9,8 @@ import { useState } from "react";
 // Reusable RuleItem Component
 function RuleItem({ rule }) {
   return (
-    <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-      <div className="lg:w-4/5">
+    <li className="grid lg:flex lg:justify-between lg:items-center py-8 gap-8 first:border-y last:border-0 border-b border-y-tabbordercolor">
+      <div>
         <h2 className="tab-size">{rule.id}</h2>
         <p className="pt-2 small-size">{rule.description}</p>
         <div className="pt-2 flex gap-2">
@@ -39,8 +39,8 @@ function RuleItem({ rule }) {
 function getDisclosureButtonClasses(open) {
   return `${
     open
-      ? "bg-tabbgcolor hover:bg-tabtopnotactive"
-      : "bg-tabtopnotactive rounded-b-2xl"
+      ? "bg-tabbgcolor shadow-lg  hover:bg-tabtopnotactive"
+      : "bg-tabtopnotactive shadow-lg  rounded-b-2xl"
   } rounded-t-2xl py-3 px-10 flex gap-8 text-left text-2xl p-2`;
 }
 
@@ -99,7 +99,13 @@ export default function RulesPage({ params }) {
                         </svg>
                       </div>
                     </Disclosure.Button>
-                    <Disclosure.Panel className="bg-tabbgcolor">
+                    <Disclosure.Panel
+                      className="bg-tabbgcolor shadow-lg 
+
+rounded-br-lg
+
+rounded-bl-lg rounded-tr-lg p-10 "
+                    >
                       <ul>
                         {rulesData.map((rule, ruleIndex) => (
                           <RuleItem key={ruleIndex} rule={rule} />

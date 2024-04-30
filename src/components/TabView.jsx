@@ -15,7 +15,6 @@ export default function TabView({ data }) {
     Ufuldendt: data.incomplete,
   });
 
-  // Ref for tab navigation
   const tabListRef = useRef(null);
 
   const filteredCategories = Object.keys(categories).filter(
@@ -85,7 +84,7 @@ export default function TabView({ data }) {
                     {posts.map((post) => (
                       <li
                         key={post.id}
-                        className="flex flex-col flex-wrap items-center py-4 md:flex-row md:px-8 md:py-8 border-b border-y-tabbordercolor first:border-y last:border-0"
+                        className="flex flex-col md:flex-row items-center py-4 md:px-8 md:py-8 border-b border-y-tabbordercolor first:border-y last:border-0"
                       >
                         <div className="hidden md:block flex-shrink-0 mr-4">
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
@@ -98,15 +97,11 @@ export default function TabView({ data }) {
                             {post.help}
                           </h3>
                         </div>
-                        <div
-                          className={`flex-grow md:my-0 md:flex-grow md:pl-4 max-w-md text-center my-2 ${
-                            post.impact ? "" : "hidden"
-                          }`}
-                        >
-                          <p>Impact:</p>
-                          <p>{post.impact || "Ingen signifikant påvirkning"}</p>
-                        </div>
-                        <div className="md:ml-auto py-4">
+                        <div className="flex flex-row justify-between items-center md:flex-col md:items-start flex-grow md:my-0 md:flex-grow md:pl-4 max-w-md my-2">
+                          <p className="text-center md:text-left">Impact:</p>
+                          <p className="text-center md:text-left">
+                            {post.impact}
+                          </p>
                           <Link
                             tabIndex="0"
                             className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"

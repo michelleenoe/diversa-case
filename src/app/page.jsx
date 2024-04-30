@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 import React from "react";
 
 export const metadata = {
-  //det der normalt står i vores header skriver vi ind her
+
   title: "tilgængelighedsrapportering",
   description:
     "Tilgængelighedsrapporteringsværktøj - Opgave med Charlie Tango for Diversa. Multimediedesign Frontend 2024",

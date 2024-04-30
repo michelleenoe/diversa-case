@@ -33,7 +33,7 @@ export default function RulesPage({ params }) {
                 <Disclosure.Panel className="bg-tabbgcolor">
                   <ul className="">
                     <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-                      <div className="lg:w-4/5">
+                      <div className="w-4/5">
                         <h2 className=" font-bold ">{firstRule.id}</h2>
                         <p className="pt-2">{firstRule.description} </p>
                         <div className="pt-2 flex gap-2 ">
@@ -42,14 +42,14 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className=" py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${firstRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${firstRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
                     </li>
 
                     <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-                      <div className="lg:w-4/5">
+                      <div className="w-4/5">
                         <h2 className=" font-bold ">{secondRule.id}</h2>
                         <p className="pt-2">{secondRule.description} </p>
                         <div className="pt-2 flex gap-2 ">
@@ -57,15 +57,15 @@ export default function RulesPage({ params }) {
                           <p>{Array.isArray(secondRule.issuetype) ? secondRule.issuetype.join(", ") : secondRule.issuetype}</p>
                         </div>
                       </div>
-                      <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${secondRule.id}`} prefetch={false}>
+                      <div className="w-1/5">
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${secondRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
                     </li>
 
                     <li className="grid lg:flex lg:justify-between lg:items-center py-8 pl-6 gap-8 first:border-y last:border-0 border-b border-y-primarytextcolor">
-                      <div className="lg:w-4/5">
+                      <div className="w-4/5">
                         <h2 className=" font-bold ">{thirdRule.id}</h2>
                         <p className="pt-2">{thirdRule.description} </p>
                         <div className="pt-2 flex gap-2 ">
@@ -74,7 +74,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${thirdRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${thirdRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
@@ -89,7 +89,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${loremRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${loremRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
@@ -122,7 +122,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${firstRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${firstRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
@@ -138,7 +138,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${secondRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${secondRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
@@ -154,7 +154,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${thirdRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${thirdRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>
@@ -169,7 +169,7 @@ export default function RulesPage({ params }) {
                         </div>
                       </div>
                       <div className="lg:w-1/5">
-                        <Link className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03" href={`/rules/${loremRule.id}`} prefetch={false}>
+                        <Link className="border py-2 px-4 rounded-full bg-primarycolor02 transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-primarycolorvariant03" href={`/rules/${loremRule.id}`} prefetch={false}>
                           Læs mere
                         </Link>
                       </div>

@@ -78,7 +78,6 @@ body {
 .normal-size {
   font-size: var(--heading06);
   font-weight: var(--medium);
-  line-height: var(--heading-small-line-height);
   color: var(--primary-text-color);
   margin-bottom: 1rem;
 }

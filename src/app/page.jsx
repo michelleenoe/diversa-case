@@ -3,7 +3,6 @@ import Button from "@/components/Button";
 import React from "react";
 
 export const metadata = {
-
   title: "tilgængelighedsrapportering",
   description:
     "Tilgængelighedsrapporteringsværktøj - Opgave med Charlie Tango for Diversa. Multimediedesign Frontend 2024",
@@ -32,7 +31,7 @@ export default function Home() {
               </label>
               <div className="flex flex-wrap gap-3">
                 <input
-                  className="bg-inputfieldcolor rounded-full px-3 py-2 mr-3 w-2/3"
+                  className="bg-inputfieldcolor rounded-full px-3 py-2 mr-3 w-2/3 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                   type="text"
                   id="url"
                   name="url"

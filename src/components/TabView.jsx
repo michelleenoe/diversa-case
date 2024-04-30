@@ -61,7 +61,7 @@ export default function TabView({ data }) {
                         <div className="hidden md:block flex-shrink-0 mr-4">
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                         </div>
-                        <div className="col-span-2 md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
+                        <div className="col-span-2 pb-3 md:pb-0 md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
                           <h2 className="small-size mb-1 max-w-md text-wrap md:mb-0">{post.description}</h2>
                           <h3 className="hidden md:block text-wrap small-size max-w-md ">{post.help}</h3>
                         </div>
@@ -69,7 +69,7 @@ export default function TabView({ data }) {
                           <p>Impact:</p>
                           <p>{post.impact === null || post.impact === 0 ? "Passed" : post.impact}</p>
                         </div>
-                        <div className="md:ml-auto py-4">
+                        <div className="md:ml-auto py-4  my-2">
                           <Link tabIndex="0" className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor" href={`/rules/${post.id}`} prefetch={false}>
                             Læs mere
                           </Link>

@@ -71,40 +71,42 @@ export default function RulesPage({ params }) {
               </p>
             </div>
           </article>
-          {["2.0", "2.1"].map((version) => (
-            <Disclosure key={version} defaultOpen className=" pt-5">
+          {["2.0", "2.1"].map((version, index) => (
+            <Disclosure key={version} defaultOpen={index === 0}>
               {({ open }) => (
                 <>
-                  <Disclosure.Button
-                    className={getDisclosureButtonClasses(open)}
-                  >
-                    <h2 className="tab-size">
-                      WCAG {version} Level A & AA regler
-                    </h2>
-                    <div
-                      className={`${
-                        open ? "rotate-180 transform" : ""
-                      } h-5 w-5 flex items-center`}
+                  <div className={`mb-${index === 0 ? "4" : "0"}`}>
+                    <Disclosure.Button
+                      className={getDisclosureButtonClasses(open)}
                     >
-                      <svg
-                        className="w-7"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="6"
-                        height="6"
-                        fill="currentColor"
-                        viewBox="0 0 16 16"
+                      <h2 className="tab-size">
+                        WCAG {version} Level A & AA regler
+                      </h2>
+                      <div
+                        className={`${
+                          open ? "rotate-180 transform" : ""
+                        } h-5 w-5 flex items-center`}
                       >
-                        <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                      </svg>
-                    </div>
-                  </Disclosure.Button>
-                  <Disclosure.Panel className="bg-tabbgcolor">
-                    <ul>
-                      {rulesData.map((rule, index) => (
-                        <RuleItem key={index} rule={rule} />
-                      ))}
-                    </ul>
-                  </Disclosure.Panel>
+                        <svg
+                          className="w-7"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="6"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+                        </svg>
+                      </div>
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="bg-tabbgcolor">
+                      <ul>
+                        {rulesData.map((rule, ruleIndex) => (
+                          <RuleItem key={ruleIndex} rule={rule} />
+                        ))}
+                      </ul>
+                    </Disclosure.Panel>
+                  </div>
                 </>
               )}
             </Disclosure>

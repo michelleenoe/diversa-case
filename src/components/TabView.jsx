@@ -57,7 +57,7 @@ export default function TabView({ data }) {
                   </div>
                   <ul className="small-size md:px-8">
                     {posts.map((post) => (
-                      <li key={post.id} className=" grid grid-cols-2 justify-items-center	 md:flex md:flex-wrap md:items-center py-4 md:flex-row md:px-8 md:py-8 border-b border-y-tabbordercolor first:border-y last:border-0">
+                      <li key={post.id} className=" grid grid-cols-2 justify-items-center	 md:flex md:flex-wrap md:items-center py-4 md:flex-row md:px-8 md:py-8 border-b border-y-tabbordercolor first:border-y last:border-b-0">
                         <div className="hidden md:block flex-shrink-0 mr-4">
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                         </div>

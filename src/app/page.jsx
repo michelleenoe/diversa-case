@@ -10,7 +10,7 @@ export const metadata = {
 export default function Home() {
   return (
     <section className=" grid grid-cols-gridContent ">
-      <div className="py-16 mb-20 col-start-3">
+      <div className="py-16 col-start-3">
         <div>
           <div className="large-size pb-6 max-w-2xl">
             <h1 className={baskerville.className}>Velkommen til vores værktøj til tilgængelighedsrapportering</h1>

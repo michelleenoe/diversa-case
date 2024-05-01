@@ -9,13 +9,13 @@ import { useState } from "react";
 // Reusable RuleItem Component
 function RuleItem({ rule }) {
   return (
-    <li className="grid lg:flex lg:justify-between lg:items-center py-8 gap-8 first:border-y last:border-0 border-b border-y-tabbordercolor">
+    <li className="grid lg:flex lg:justify-between lg:items-center py-8 gap-8 border-b border-y-tabbordercolor first:border-1 last:border-b-0">
       <div>
         <h2 className="tab-size">{rule.id}</h2>
-        <p className="pt-2 small-size">{rule.description}</p>
-        <div className="pt-2 flex gap-2">
-          <p className="tab-size">Fejl type:</p>
-          <p>
+        <p className="pt-3 small-size">{rule.description}</p>
+        <div className="pt-3 flex gap-2 whitespace-nowrap">
+          <p className="tab-size whitespace-nowrap">Fejl type:</p>
+          <p className="normal-size ">
             {Array.isArray(rule.issuetype)
               ? rule.issuetype.join(", ")
               : rule.issuetype}
@@ -24,7 +24,7 @@ function RuleItem({ rule }) {
       </div>
       <div className="lg:w-1/5 flex justify-end">
         <Link
-          className="py-2 px-4 rounded-full bg-primarycolor02 transition-colors duration-100 ease-in-out hover:bg-primarycolorvariant03 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+          className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
           href={`/rules/${rule.id}`}
           prefetch={false}
         >
@@ -40,7 +40,7 @@ function getDisclosureButtonClasses(open) {
   return `
   ${open ? "bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive"}
   shadow-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor 
-  py-3 px-8 flex gap-8 text-left text-2xl
+  py-3 px-8 flex gap-8 text-left tab-size
 `;
 }
 

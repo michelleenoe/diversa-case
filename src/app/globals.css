@@ -53,6 +53,12 @@
 
 body {
   background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex-grow: 1;
 }
 .link {
   font-weight: var(--medium);
@@ -94,7 +100,7 @@ body {
 }
 
 .bordercolor {
-  border: 0.18rem solid var(--tab-border-color);
+  border: 0.1rem solid var(--tab-border-color);
 }
 
 .custom-grid {

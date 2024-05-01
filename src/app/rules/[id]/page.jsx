@@ -1,26 +1,22 @@
-
 import rulesData from "../rulesData.json";
 import { baskerville } from "@/app/fonts";
 import Link from "next/link";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
-  const data = rulesData.find((rule) => rule.id === id) ||
+  const data =
+    rulesData.find((rule) => rule.id === id) ||
     rulesData.find((rule) => rule.id === "Lorem ipsum");
 
-
-    return {
+  return {
+    title: data.id,
+    description: data.description,
+    openGraph: {
       title: data.id,
-      description: data.description,
-      openGraph: {
-        title: data.id,
-        description: data.descriptionlong,
-    
-      }
-    };
-
-  }
-
+      description: data.descriptionlong,
+    },
+  };
+}
 
 export default function RuleDetail({ params }) {
   const { id } = params;
@@ -54,7 +50,7 @@ export default function RuleDetail({ params }) {
                 </p>
                 <p className="flex justify-end small-size pt-3">
                   <Link
-                    className="bg-primarycolor01  hover:bg-primarycolorvariant01 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor px-5 py-3 rounded-full"
+                    className="bg-primarycolor01  hover:bg-primarycolorvariant01 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor bordercolor px-5 py-3 rounded-full"
                     href={`/${rule.id}`}
                     prefetch={false}
                   >

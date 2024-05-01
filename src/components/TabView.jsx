@@ -52,8 +52,8 @@ export default function TabView({ data }) {
                   classNames(
                     "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5  ",
                     selected
-                      ? "bg-tabbgcolor text-secondarycolor-700 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
-                      : "bg-tabtopnotactive text-secondarycolor-100  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+                      ? "bg-tabbgcolor bordercolor  text-secondarycolor-700 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+                      : "bg-tabtopnotactive bordercolor  text-secondarycolor-100  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                   )
                 }
               >
@@ -65,13 +65,13 @@ export default function TabView({ data }) {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className="bg-tabbgcolor shadow-lg rounded-xl mt-2 items-center">
+          <Tab.Panels className="bg-tabbgcolor shadow-lg rounded-xl mt-2 items-center bordercolor ">
             {Object.values(categories).map((posts, idx) => (
               <Tab.Panel
                 key={idx}
                 className={classNames(
                   "rounded-xl bg-white p-3",
-                  "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+                  "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor "
                 )}
               >
                 <section>
@@ -91,10 +91,10 @@ export default function TabView({ data }) {
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                         </div>
                         <div className="col-span-2 py-3 md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
-                          <h2 className="small-size mb-1 max-w-md text-wrap md:mb-0">
+                          <h2 className="small-size mb-1 max-w-md md:mb-0">
                             {post.description}
                           </h2>
-                          <h3 className="hidden md:block text-wrap small-size max-w-md ">
+                          <h3 className="hidden md:block  small-size max-w-md ">
                             {post.help}
                           </h3>
                         </div>
@@ -109,7 +109,7 @@ export default function TabView({ data }) {
                         <div className="md:ml-auto py-4  my-2">
                           <Link
                             tabIndex="0"
-                            className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+                            className="bg-primarycolor02 bordercolor  hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                             href={`/rules/${post.id}`}
                             prefetch={false}
                           >

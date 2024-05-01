@@ -94,7 +94,7 @@ body {
 }
 
 .bordercolor {
-  border: 2px solid var(--tab-border-color);
+  border: 0.18rem solid var(--tab-border-color);
 }
 
 .custom-grid {

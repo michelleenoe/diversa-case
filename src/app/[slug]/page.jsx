@@ -9,7 +9,7 @@ import { useState } from "react";
 // Reusable RuleItem Component
 function RuleItem({ rule }) {
   return (
-    <li className="grid lg:flex lg:justify-between lg:items-center py-8 gap-8 border-b border-y-tabbordercolor first:border-1 last:border-b-0">
+    <li className="grid lg:flex lg:justify-between lg:items-center py-8 border-b border-y-tabbordercolor first:border-1 last:border-b-0">
       <div>
         <h2 className="tab-size">{rule.id}</h2>
         <p className="pt-3 small-size">{rule.description}</p>
@@ -24,7 +24,7 @@ function RuleItem({ rule }) {
       </div>
       <div className="lg:w-1/5 flex justify-end">
         <Link
-          className="bg-primarycolor02 hover:bg-primarycolorvariant03 small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+          className="bg-primarycolor02 hover:bg-primarycolorvariant03 bordercolor  small-size px-4 md:px-5 py-2 md:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
           href={`/rules/${rule.id}`}
           prefetch={false}
         >
@@ -40,7 +40,7 @@ function getDisclosureButtonClasses(open) {
   return `
   ${open ? "bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive"}
   shadow-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor 
-  py-3 px-8 flex gap-8 text-left tab-size
+  py-3 px-8 flex gap-8 text-left tab-size bordercolor 
 `;
 }
 
@@ -102,7 +102,7 @@ export default function RulesPage({ params }) {
                     <Disclosure.Panel
                       className={`bg-tabbgcolor shadow-lg 
 
-                      rounded-xl p-10  mt-3`}
+                      rounded-xl px-10  mt-3 bordercolor `}
                     >
                       <ul>
                         {rulesData.map((rule, ruleIndex) => (

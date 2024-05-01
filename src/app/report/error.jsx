@@ -16,7 +16,7 @@ export default function Rapportfejl() {
           igen.
         </p>
         <Link
-          className="bg-primarycolor02 hover:bg-primarycolorvariant03 px-5 py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+          className="bg-primarycolor02 hover:bg-primarycolorvariant03 px-5 py-3 rounded-full bordercolor  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
           href={"/"}
           prefetch={false}
         >

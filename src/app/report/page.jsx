@@ -3,20 +3,20 @@ import Image from "next/image";
 import TabView from "@/components/TabView";
 export const revalidate = 1800;
 
-// export async function generateMetadata({ searchParams }) {
-//   const params = new URLSearchParams(searchParams);
-//   const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
-//   const data = await response.json();
+ export async function generateMetadata({ searchParams }) {
+ const params = new URLSearchParams(searchParams);
+ const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
+ const data = await response.json();
 
-//   return {
-//     title: `Rapport for ${data.url}`,
-//     description: `Din score er ${beregnScore(data)}%`,
-//     openGraph: {
-//       title: `Rapport for ${data.url}`,
-//       description: `Din score er ${beregnScore(data)}%`,
-//     },
-//   };
-// }
+ return {
+  title: `Rapport for ${data.url}`,
+   description: `Din score er ${beregnScore(data)}%`,
+   openGraph: {
+     title: `Rapport for ${data.url}`,
+    description: `Din score er ${beregnScore(data)}%`,
+  },
+ };
+}
 
 const SCORE_COLORS = {
   A: "#6ED669",

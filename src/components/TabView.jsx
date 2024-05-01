@@ -52,8 +52,8 @@ export default function TabView({ data }) {
                   classNames(
                     "px-10 flex justify-center items-center gap-5 rounded-lg py-2.5 small-size font-medium leading-5  ",
                     selected
-                      ? "bg-tabbgcolor text-secondarycolor-700 shadow"
-                      : "bg-tabtopnotactive text-secondarycolor-100"
+                      ? "bg-tabbgcolor text-secondarycolor-700 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
+                      : "bg-tabtopnotactive text-secondarycolor-100  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor"
                   )
                 }
               >
@@ -90,7 +90,7 @@ export default function TabView({ data }) {
                         <div className="hidden md:block flex-shrink-0 mr-4">
                           <div className="p-2 w-4 h-4 aspect-square rounded-full bg-cColor"></div>
                         </div>
-                        <div className="col-span-2 pb-3 md:pb-0 md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
+                        <div className="col-span-2 py-3 md:flex-grow-0 md:pl-4 md:w-3/6 lg:w-3/5 text-center md:text-left">
                           <h2 className="small-size mb-1 max-w-md text-wrap md:mb-0">
                             {post.description}
                           </h2>
@@ -98,8 +98,8 @@ export default function TabView({ data }) {
                             {post.help}
                           </h3>
                         </div>
-                        <div className="flex-grow md:my-0 md:flex-grow md:pl-4 max-w-md text-center my-2">
-                          <p>Impact:</p>
+                        <div className="flex-grow md:my-0 md:flex-grow md:pl-4 max-w-md items-start my-2 small-size">
+                          <p className="font-bold">Impact:</p>
                           <p>
                             {post.impact === null || post.impact === 0
                               ? "Passed"

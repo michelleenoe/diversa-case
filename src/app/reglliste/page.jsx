@@ -32,7 +32,11 @@ function getDisclosureButtonClasses(open) {
   return `
   ${open ? "bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive"}
   shadow-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor 
+<<<<<<< HEAD:src/app/reglliste/page.jsx
   py-3 md:px-8 px-4 flex gap-3 md:gap-8 text-left tab-size bordercolor 
+=======
+  py-3 px-8 flex gap-8 text-left tabnormal-size bordercolor 
+>>>>>>> main:src/app/[slug]/page.jsx
 `;
 }
 
@@ -54,11 +58,34 @@ export default function RulesPage({ params }) {
             <Disclosure key={version} defaultOpen={index === 0}>
               {({ open }) => (
                 <>
+<<<<<<< HEAD:src/app/reglliste/page.jsx
                   <div className={`my-4`}>
                     <Disclosure.Button className={getDisclosureButtonClasses(open)}>
                       <h2 className="tab-size whitespace-nowrap">WCAG {version} Level A & AA regler</h2>
                       <div className={`${open ? "rotate-180 transform" : ""} h-5 w-5 flex items-center`}>
                         <svg className="w-7" xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="currentColor" viewBox="0 0 16 16">
+=======
+                  <div className={`mb-${index === 0 ? "4" : "0"}`}>
+                    <Disclosure.Button
+                      className={getDisclosureButtonClasses(open)}
+                    >
+                      <h2 className=" whitespace-nowrap">
+                        WCAG {version} Level A & AA regler
+                      </h2>
+                      <div
+                        className={`${
+                          open ? "rotate-180 transform" : ""
+                        } h-5 w-5 flex items-center`}
+                      >
+                        <svg
+                          className="w-7"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="6"
+                          fill="currentColor"
+                          viewBox="0 0 16 16"
+                        >
+>>>>>>> main:src/app/[slug]/page.jsx
                           <path d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
                         </svg>
                       </div>

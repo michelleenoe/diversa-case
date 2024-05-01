@@ -40,7 +40,7 @@ function getDisclosureButtonClasses(open) {
   return `
   ${open ? "bg-tabbgcolor hover:bg-tabtopnotactive" : "bg-tabtopnotactive"}
   shadow-lg rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor 
-  py-3 px-8 flex gap-8 text-left tab-size bordercolor 
+  py-3 px-8 flex gap-8 text-left tabnormal-size bordercolor 
 `;
 }
 
@@ -79,7 +79,7 @@ export default function RulesPage({ params }) {
                     <Disclosure.Button
                       className={getDisclosureButtonClasses(open)}
                     >
-                      <h2 className="tab-size whitespace-nowrap">
+                      <h2 className=" whitespace-nowrap">
                         WCAG {version} Level A & AA regler
                       </h2>
                       <div

@@ -85,6 +85,10 @@ body {
   font-weight: var(--medium);
   color: var(--primary-text-color);
 }
+.tabnormal-size {
+  font-size: var(--heading06);
+  color: var(--primary-text-color);
+}
 
 .small-size {
   font-size: var(--paragraph-text);

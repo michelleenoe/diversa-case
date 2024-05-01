@@ -3,7 +3,7 @@ import { baskerville } from "./fonts";
 
 export default function NotFound() {
   return (
-    <section className="grid grid-cols-gridContent">
+    <section className="pt-10 grid grid-cols-gridContent">
       <div className="pt-10 mb-20 col-start-3">
         <div className="large-size pb-6 max-w-2xl">
           <h1 className={baskerville.className}>Siden findes ikke</h1>

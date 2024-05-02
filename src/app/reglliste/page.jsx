@@ -6,6 +6,8 @@ import { Disclosure } from "@headlessui/react";
 import rulesData from "../rules/rulesData.json";
 import { useState } from "react";
 
+
+
 // Reusable RuleItem Component
 function RuleItem({ rule }) {
   return (

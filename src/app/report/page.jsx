@@ -50,9 +50,9 @@ async function getData(searchParams){
     //`http://localhost:3000/testdata/dsb.json`
   );
   console.log(response)
-  /* if(response.status!==200){
-    return notFound()
-  } */
+  if(response.status!==200){
+    return error()
+  } 
   const data = await response.json();
   return data;
 }

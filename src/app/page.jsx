@@ -8,6 +8,7 @@ export const metadata = {
     "Tilgængelighedsrapporteringsværktøj - Opgave med Charlie Tango for Diversa. Multimediedesign Frontend 2024",
 };
 
+
 export default function Home() {
   return (
     <section className=" grid grid-cols-gridContent ">

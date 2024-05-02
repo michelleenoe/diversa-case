@@ -48,6 +48,8 @@ export default async function Side({ searchParams }) {
   );
   const data = await response.json();
 
+  console.log(data.violations.length);
+
   const score = beregnScore(data);
   const { letter, color } = SamletScoreBogstav(score);
 

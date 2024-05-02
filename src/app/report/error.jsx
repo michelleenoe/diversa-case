@@ -1,6 +1,11 @@
 "use client";
 import { baskerville } from "../fonts";
 import Link from "next/link";
+export const metadata = {
+  title: "tilgængelighedsrapportering - fejl",
+  description:
+    "Tilgængelighedsrapporteringsværktøj - Opgave med Charlie Tango for Diversa. Multimediedesign Frontend 2024",
+};
 
 export default function Rapportfejl() {
   return (

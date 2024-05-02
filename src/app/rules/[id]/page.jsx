@@ -43,7 +43,7 @@ export default function RuleDetail({ params }) {
                   <p className="small-size max-w-xl pt-1">{rule.whyitmatters}</p>
                 </p>
                 <p className="flex justify-end small-size pt-3">
-                  <Link className="bg-primarycolor01  hover:bg-primarycolorvariant01 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor bordercolor px-5 py-3 rounded-full" href={`/${rule.id}`} prefetch={false}>
+                  <Link className="bg-primarycolor01  hover:bg-primarycolorvariant01 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondarycolor bordercolor px-5 py-3 rounded-full" href={`/reglliste`} prefetch={false}>
                     Gå til regelsæt
                   </Link>
                 </p>
